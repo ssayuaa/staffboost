@@ -1,0 +1,164 @@
+.alert
+  position: absolute
+  top: 0
+  left: 0
+  display: flex
+  gap: 16px
+  align-items: center
+  justify-content: space-between
+  padding: 24px 32px
+  background: rgba(207, 186, 112, 0.04)
+  margin: 0 0 100px 0
+  @media (max-width: 1200px)
+    width: 100%
+    margin: 0 0 100px 0
+  @media (max-width: 767px)
+    margin: 0 0 100px 0
+  &__text
+    display: flex
+    align-items: center
+    gap: 16px
+    span
+      color: #CFBA70
+  &__closeIcon
+    cursor: pointer
+
+.registration
+  margin: 0px 0px 32px 272px
+  @media (max-width: 1200px)
+    margin: 0 48px 198px
+  @media (max-width: 767px)
+    margin: 0 24px 96px
+  &__wrapper
+    max-width: 728px
+    margin: 120px 0 0 150px
+    padding-bottom: 40px
+    @media (max-width: 1200px)
+      margin: 160px auto 0
+  &__userRow
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 48px
+  &__userInfo
+    display: flex
+    align-items: center
+    gap: 16px
+  &__userProfilePicture
+    width: 80px
+    height: 80px
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      border-radius: 50%
+  &__userWrapper
+    display: flex
+    flex-direction: column
+    gap: 8px
+  &__userName
+    font-size: 24px
+    font-weight: 600
+  &__verificationStatus
+    display: flex
+    align-items: center
+    gap: 6px
+    padding: 8px 20px
+    border-radius: 20px
+    background: rgba(255, 212, 76, 0.10)
+    align-self: start
+    span
+      color: #FFD851
+      line-height: 24px
+    img
+      cursor: pointer
+
+
+
+
+.verification
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: 40px
+  @media (max-width: 767px)
+    flex-direction: column
+    align-items: start
+  &__text
+    display: flex
+    flex-direction: column
+    gap: 8px
+    span
+      color: #5B5B5B
+      font-size: 20px
+      font-weight: 500
+    p
+      color: #828282
+      line-height: 24px
+
+.notification
+  display: flex
+  gap: 12px
+  margin-bottom: 8px
+  &__text
+    display: flex
+    flex-direction: column
+    gap: 8px
+    span
+      color: #333
+      font-size: 20px
+    p
+      color: #828282
+      line-height: 24px
+
+
+.toggleSwitchContainer
+  width: 40px
+
+.toggleSwitch
+  position: relative
+  display: inline-block
+  width: 36px
+  height: 20px
+  cursor: pointer
+  input
+    display: none
+
+.slider
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: #70777A
+  border-radius: 70px
+  transition: 0.4s
+  &:before
+    position: absolute
+    content: ""
+    height: 12px
+    width: 12px
+    left: 4px
+    bottom: 4px
+    background-color: #fff
+    border-radius: 50%
+    transition: 0.4s
+
+  .toggleSwitch input:checked + &
+    background-color: #66F
+
+  .toggleSwitch input:checked + &:before
+    transform: translateX(16px)
+
+
+
+.leftContent
+  position: relative
+  width: 100%
+  @media (max-width: 1200px)
+      padding-left: 0
+
+
+.btn_hidden
+  @media (max-width: 767px)
+    display: none

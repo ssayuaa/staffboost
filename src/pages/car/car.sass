@@ -1,0 +1,387 @@
+.main
+  display: flex
+  gap: 24px
+  height: calc(100% - 64px)
+  margin: 32px 10px
+  padding: 0px 22px
+  width: 100%
+  overflow-y: auto 
+  @media (max-width: 1200px)
+    margin: 0
+    display: block
+    padding: 114px 51px 135px
+  @media (max-width: 767px)
+    margin: 0
+    padding: 109px 24px 116px
+    gap: 48px
+.car-content-left
+  min-width: 500px
+  width: calc(100% - 446px)
+  @media (max-width: 1200px)
+    width: 100%
+    min-width: 100%
+.product
+  border-radius: 12px
+  background: #101010
+  height: fit-content
+  &__firstCol
+    padding: 24px 32px
+    @media (max-width: 767px)
+      padding: 20px 24px
+  &__name
+    font-size: 24px
+    font-weight: 600
+    line-height: 32px
+    margin-bottom: 24px
+    @media (max-width: 767px)
+      font-size: 18px
+      margin-bottom: 19px
+  &__info
+    display: flex
+    gap: 30px
+    @media (max-width: 767px)
+      gap: 22px
+    &_margin
+      margin-bottom: 28px
+      @media (max-width: 767px)
+        margin-bottom: 20px
+  &__leftCol
+    display: flex
+    flex-direction: column
+    gap: 4px
+    width: 130px
+    @media (max-width: 767px)
+      gap: 3px
+      width: 99px
+  &__vl
+    width: 2px
+    height: 41px
+    background: #969FA3
+    @media (max-width: 767px)
+      width: 1.529px
+      height: 31px
+  &__rightCol
+    display: flex
+    flex-direction: column
+    gap: 4px
+    @media (max-width: 767px)
+      gap: 3px
+  &__title
+    color: #969FA3
+    font-weight: 500
+    line-height: normal
+    @media (max-width: 767px)
+      font-size: 12px
+  &__numbers
+    font-size: 20px
+    font-weight: 600
+    line-height: normal
+    @media (max-width: 767px)
+      font-size: 15px
+  &__imgWrapper
+    display: flex
+    align-items: center
+    justify-content: center
+  &__img
+    max-width: 434px
+    height: 288px
+    @media (max-width: 767px)
+      max-width: 330px
+      height: 220px
+    img
+      width: 100%
+  &__characteristics
+    display: flex
+    flex-direction: column
+    gap: 16px
+    color: #969FA3
+    padding: 20px 32px 32px
+    @media (max-width: 767px)
+      gap: 12px
+      font-size: 12px
+      padding: 14px 25px 19px
+    span
+      color: #fff
+
+.activity
+  background: url("./../../../public/images/graph.svg") no-repeat left/contain
+  height: 268px
+  margin-bottom: 34px
+  opacity: 0.3
+  @media (max-width: 767px)
+    background: url("./../../../public/images/graph-mobile.png") no-repeat #101010
+    background-size: 100% 100%
+
+.notiesAndAvailableSensors
+  display: flex
+  gap: 24px
+  opacity: 0.3
+  margin-bottom: 32px
+  @media (max-width: 1200px)
+    gap: 20px
+  @media (max-width: 767px)
+    flex-direction: column
+    gap: 48px
+
+.noties
+  padding: 20px 18px
+  background: #101010
+  border-radius: 14px
+  width: 50%
+  @media (max-width: 1200px)
+    width: 100%
+  &__title
+    font-size: 20px
+    font-weight: 700
+    margin-bottom: 16px
+    @media (max-width: 767px)
+      font-size: 22px
+  &__content
+    display: flex
+    flex-direction: column
+    gap: 18px
+    position: relative
+    &::before
+      position: absolute
+      content: ''
+      background: url("./../../../public/images/dotted-line.svg") no-repeat
+      width: 100%
+      height: 100%
+      left: 20px
+  &__col
+    display: flex
+    align-items: start
+    gap: 14px
+  &__imgCol
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 10px
+    border-radius: 30px
+    background: #1e1e1e
+    box-shadow: 0px 2px 4px 0px rgba(14, 14, 14, 0.20)
+  &__date
+    font-size: 13px
+    font-weight: 500
+    line-height: normal
+    margin-bottom: 4px
+  &__txt
+    color: #7C7C8D
+    font-size: 11px
+    line-height: normal
+    margin-bottom: 10px
+  &__status
+    font-size: 10px
+    font-weight: 700
+    border-radius: 4px
+    background: #70CF97
+    width: 83px
+    height: 21px
+    display: flex
+    align-items: center
+    justify-content: center
+    &_gray
+      color: #E0E4E7
+      font-weight: 500
+      width: 102px
+      height: 21px
+      background: #1E1E1E
+
+.availableSensors
+  padding: 20px
+  border-radius: 14px
+  background: #101010
+  width: 50%
+  @media (max-width: 1200px)
+    width: 100%
+  &__title
+    display: flex
+    justify-content: space-between
+    margin-bottom: 20px
+  &__select
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    width: 65px
+    color: #7C7C8D
+    font-family: 'Inter', sans-serif
+    font-size: 12px
+    font-weight: 500
+    background: #101010
+    border: none
+    cursor: pointer
+    background-image: url('./../../../public/images/downward.svg')
+    background-repeat: no-repeat
+    background-position: 100% 65%
+    outline: none
+    &::-ms-expand
+      display: none
+  &__txt
+    font-size: 18px
+    font-weight: 500
+  &__hl
+    width: 100%
+    height: 1px
+    background: #2C303D
+    margin-bottom: 26px
+  &__link
+    display: inline-block
+    font-size: 14px
+    font-weight: 500
+    border-radius: 5px
+    background: #FF6370
+    padding: 10px 12px
+    transition: 0.15s
+    &:hover
+      background-color: darken(#FF6370, 3%)
+
+.checkboxes
+  display: flex
+  flex-direction: column
+  gap: 22px
+  margin-bottom: 16px
+
+.checkbox
+  position: relative
+  margin-top: -8px
+  input
+    position: absolute
+    opacity: 0
+    & + label
+      display: inline-block
+      position: relative
+      padding-left: 30px
+      padding-top: 2px
+      font-size: 13px
+      font-weight: 500
+      cursor: pointer
+      display: flex
+      justify-content: space-between
+      svg
+        fill: #a4a5a6
+      &:before
+        position: absolute
+        display: block
+        left: 0
+        top: 0
+        content: ""
+        background: transparent
+        width: 18px
+        height: 18px
+        box-shadow: inset 0 0 0 1px #333642
+        border-radius: 3px
+        transition: 200ms ease-in-out all
+      &:after
+        position: absolute
+        display: block
+        top: 14.5px
+        left: 4px
+        transform: translateY(-50%)
+        content: ""
+        background-image: url('./../../../public/images/check.svg')
+        background-repeat: no-repeat
+        width: 18px
+        height: 18px
+        transition: opacity 200ms ease-in-out
+        opacity: 0
+    &:hover
+      color: #333
+    &:focus
+      outline: none
+    &:checked + label
+      color: #FF6370
+      svg
+        fill: #FF6370
+      span
+        color: #ff6370
+      &:before
+        background: #FF6370
+        box-shadow: none
+      &:after
+        opacity: 1
+  label
+    color: #fff
+    .greyCl
+      color: #72767c
+
+.reminder
+  background: #101010
+  border-radius: 14px
+  padding: 16px 20px
+  grid-column: 2 / 3
+  grid-row: 3 / 4
+  opacity: 0.3
+  @media (max-width: 1200px)
+    grid-column: 1 / 2
+    grid-row: 4 / 5
+  &__firstRow
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 14px
+  &__title
+    font-size: 18px
+    font-weight: 500
+  &__btn
+    background: var(--SS, #66F)
+    color: #FFF
+    border: none
+    font-family: Inter
+    font-size: 14px
+    font-weight: 500
+    padding: 6px 12px
+    border-radius: 6px
+    cursor: pointer
+    transition: 0.15s
+    &:hover
+      background: #5353E8
+  &__secondRow
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 14px 0
+    border-top: 1px solid #1E1E1E
+    @media (max-width: 767px)
+      justify-content: start
+      gap: 85px
+  &__heading
+    color: #848484
+    font-size: 14px
+    font-weight: 500
+    @media (max-width: 1200px)
+      font-size: 15px
+    @media (max-width: 767px)
+      font-size: 15px
+    &_hidden
+      display: block
+      @media (max-width: 767px)
+        display: none
+  &__infoRow
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 14px 0
+    border-top: 1px solid #1E1E1E
+    @media (max-width: 767px)
+      justify-content: start
+      gap: 23px
+  &__info
+    color: #E0E4E7
+    font-size: 13px
+    font-weight: 500
+    @media (max-width: 1200px)
+      font-size: 14px
+    @media (max-width: 767px)
+      font-size: 14px
+    &_hidden
+      display: block
+      @media (max-width: 767px)
+        display: none
+  &__dots
+    display: none
+    @media (max-width: 767px)
+      display: flex
+      gap: 5px
+      align-items: center
+      justify-content: center
+      margin-top: 10px
