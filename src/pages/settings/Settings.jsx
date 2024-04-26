@@ -6,7 +6,7 @@ import Sidebar from '../../components/sidebar/sidebar';
 import './settings.sass';
 
 const Settings = () => {
-  const pathImage = 'images/pp.png';
+  const pathImage = 'images/moon.svg';
   return (
     <div>
       <Nav />
@@ -17,8 +17,8 @@ const Settings = () => {
             <div className="alert__text">
               <img src="images/alert-circle.svg" alt="Alert circle icon" />
               <span>
-                Your account is currently not verified, please provide us with additional
-                information to start using the platform
+              В настоящее время ваша учетная запись не подтверждена, 
+              пожалуйста, предоставьте нам дополнительную информацию, чтобы начать пользоваться платформой
               </span>
             </div>
             <img className="alert__closeIcon" src="images/close.svg" alt="Close icon" />
@@ -32,29 +32,29 @@ const Settings = () => {
                     <img src={pathImage} alt="" />
                   </div>
                   <div className="registration__userWrapper">
-                    <p className="registration__userName">Magomed Aliev</p>
+                    <p className="registration__userName">Хадидже Мочиева</p>
                     <div className="registration__verificationStatus">
-                      <span>Not verified</span>
+                      <span>Не подтвержден</span>
                       <img src="images/close-circle.svg" alt="Close circle icon" />
                     </div>
                   </div>
                 </div>
                 <Link to="/" className="secondaryBtn btn_hidden secondaryBtn_hidden">
-                  Edit avatar
+                  Изменить фото
                 </Link>
               </div>
               <form action="">
                 <div className="formInner">
                   <div className="inputbox">
-                    <label htmlFor="name">Full name (as in passport)</label>
-                    <input type="text" placeholder="Magomed Aliev" name="name" id="name" required />
+                    <label htmlFor="name">Полное имя (как в паспорте)</label>
+                    <input type="text" placeholder="Хадидже Мочиева" name="name" id="name" required />
                   </div>
 
                   <div className="inputbox">
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email">Почта</label>
                     <input
                       type="text"
-                      placeholder="emailexample@gmail.com"
+                      placeholder="email@mail.com"
                       name="email"
                       id="email"
                       required
@@ -62,10 +62,10 @@ const Settings = () => {
                   </div>
 
                   <div className="inputbox">
-                    <label htmlFor="address">Location (City, Country)</label>
+                    <label htmlFor="address">Местоположение (Город, Страна)</label>
                     <input
                       type="address"
-                      placeholder="Enter your address"
+                      placeholder="Введите свой адрес"
                       name="address"
                       id="address"
                       required
@@ -73,10 +73,10 @@ const Settings = () => {
                   </div>
 
                   <div className="inputbox">
-                    <label htmlFor="psw">Password</label>
+                    <label htmlFor="psw">Пароль</label>
                     <input
                       type="password"
-                      placeholder="Enter your password"
+                      placeholder="Введите свой пароль"
                       name="psw"
                       id="psw"
                       required
@@ -84,10 +84,10 @@ const Settings = () => {
                   </div>
 
                   <div className="inputbox">
-                    <label htmlFor="confirm_psw">Confirm password</label>
+                    <label htmlFor="confirm_psw">Подтверждение пароля</label>
                     <input
                       type="password"
-                      placeholder="Enter your password"
+                      placeholder="Подтвердите пароль"
                       name="confirm_psw"
                       id="confirm_psw"
                       required
@@ -96,36 +96,19 @@ const Settings = () => {
 
                   <div className="verification">
                     <div className="verification__text">
-                      <span>Verification</span>
+                      <span>Подтверждение</span>
                       <p>
-                        Your account is currently not verified, please provide us with additional
-                        information to start
+                      В настоящее время ваша учетная запись не подтверждена, пожалуйста, 
+                      предоставьте нам дополнительную информацию для начала
                       </p>
                     </div>
                     <Link to="/" className="secondaryBtn secondaryBtn_lg">
                       {' '}
-                      Verify account{' '}
+                      Подтвердите аккаунт{' '}
                     </Link>
                   </div>
-
-                  <div className="notification">
-                    <div className="toggleSwitchContainer">
-                      <label className="toggleSwitch">
-                        <input type="checkbox" />
-                        <span className="slider"></span>
-                      </label>
-                    </div>
-                    <div className="notification__text">
-                      <span>Notifications</span>
-                      <p>
-                        Your account is currently not verified, please provide us with additional
-                        information
-                      </p>
-                    </div>
-                  </div>
-
                   <button type="submit" className="primaryBtn">
-                    Save changes
+                    Сохранить изменения
                   </button>
                 </div>
               </form>

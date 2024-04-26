@@ -14,13 +14,13 @@
     margin: 0
     padding: 109px 24px 116px
     gap: 48px
-.car-content-left
+.project-content-left
   min-width: 500px
   width: calc(100% - 446px)
   @media (max-width: 1200px)
     width: 100%
     min-width: 100%
-.product
+.project
   border-radius: 12px
   background: #101010
   height: fit-content
@@ -102,9 +102,11 @@
       padding: 14px 25px 19px
     span
       color: #fff
+  &__span2
+    color: rgba(255, 99, 112, 1)
 
 .activity
-  background: url("./../../../public/images/graph.svg") no-repeat left/contain
+  background: url("./../../../public/images/Activity.svg") no-repeat left/contain
   height: 268px
   margin-bottom: 34px
   opacity: 0.3
@@ -123,75 +125,12 @@
     flex-direction: column
     gap: 48px
 
-.noties
-  padding: 20px 18px
-  background: #101010
-  border-radius: 14px
-  width: 50%
-  @media (max-width: 1200px)
-    width: 100%
-  &__title
-    font-size: 20px
-    font-weight: 700
-    margin-bottom: 16px
-    @media (max-width: 767px)
-      font-size: 22px
-  &__content
-    display: flex
-    flex-direction: column
-    gap: 18px
-    position: relative
-    &::before
-      position: absolute
-      content: ''
-      background: url("./../../../public/images/dotted-line.svg") no-repeat
-      width: 100%
-      height: 100%
-      left: 20px
-  &__col
-    display: flex
-    align-items: start
-    gap: 14px
-  &__imgCol
-    display: flex
-    align-items: center
-    justify-content: center
-    padding: 10px
-    border-radius: 30px
-    background: #1e1e1e
-    box-shadow: 0px 2px 4px 0px rgba(14, 14, 14, 0.20)
-  &__date
-    font-size: 13px
-    font-weight: 500
-    line-height: normal
-    margin-bottom: 4px
-  &__txt
-    color: #7C7C8D
-    font-size: 11px
-    line-height: normal
-    margin-bottom: 10px
-  &__status
-    font-size: 10px
-    font-weight: 700
-    border-radius: 4px
-    background: #70CF97
-    width: 83px
-    height: 21px
-    display: flex
-    align-items: center
-    justify-content: center
-    &_gray
-      color: #E0E4E7
-      font-weight: 500
-      width: 102px
-      height: 21px
-      background: #1E1E1E
 
 .availableSensors
   padding: 20px
   border-radius: 14px
   background: #101010
-  width: 50%
+  width: 100%
   @media (max-width: 1200px)
     width: 100%
   &__title

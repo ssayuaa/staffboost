@@ -6,16 +6,15 @@ const Nav = () => {
       <header className="header">
         <nav className="nav">
           <Link to="/" className="logo">
-            <img src="images/logo-1.svg" alt="Logo" />
-            <img src="images/logo-2.svg" alt="Logo" />
+            <img src="images/logo1.png" alt="Logo" />
+            <img src="images/logo2.png" alt="Logo" />
           </Link>
         </nav>
         <div className="login">
           <Link to="/" className="secondaryBtn">
-            Log in
+            Вход
           </Link>
           <select className="headerSelect" name="" id="">
-            <option value="En">En</option>
           </select>
         </div>
       </header>
@@ -29,10 +28,10 @@ const Nav = () => {
           <div className="account">
             <div className="login">
               <Link to="/" className="secondaryBtn">
-                Log in
+                Вход
               </Link>
               <select className="headerSelect" name="" id="">
-                <option value="En">En</option>
+          
               </select>
             </div>
           </div>

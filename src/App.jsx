@@ -1,5 +1,5 @@
 import Header from './layout/header/header';
-import Home from './pages/home/home';
+import Tasks from './pages/tasks/tasks';
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <div className="flex">
         <div>навигация</div>
         <div className="content">
-          <Home />
+          <Tasks />
         </div>
       </div>
     </div>

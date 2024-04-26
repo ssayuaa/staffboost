@@ -9,18 +9,18 @@ const Password = () => {
       <section className="registration">
         <div className="registrationInner">
           <div className="registration__text">
-            <h1 className="registration__title">Forgot password?</h1>
+            <h1 className="registration__title">Забыли пароль?</h1>
             <p className="registration__subtitle">
-              Please enter your email to get reset instructions
+            Пожалуйста, введите свой адрес электронной почты для инструкции по сбросу настроек
             </p>
           </div>
           <form action="">
             <div className="formInner">
               <div className="inputbox">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Почта</label>
                 <input
                   type="text"
-                  placeholder="emailexample@gmail.com"
+                  placeholder="email@mail.com"
                   name="email"
                   id="email"
                   required
@@ -28,11 +28,11 @@ const Password = () => {
               </div>
 
               <button type="submit" className="primaryBtn">
-                Send reset instructions
+                Отправить инструкцию по сбросу
               </button>
 
               <p href="#" className="registration__link">
-                Don’t have an account? <Link to="/registration">Sign up</Link>
+                У вас нет аккаунта? <Link to="/registration">Зарегистрироваться</Link>
               </p>
             </div>
           </form>

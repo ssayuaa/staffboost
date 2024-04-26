@@ -7,20 +7,9 @@ const Nav = () => {
       <header className="header">
         <nav className="nav">
           <Link to="/" className="logo">
-            <img src="images/logo-1.svg" alt="Logo" />
-            <img src="images/logo-2.svg" alt="Logo" />
+            <img src="images/logo1.png" alt="Logo" />
+            <img src="images/logo2.png" alt="Logo" />
           </Link>
-          <div className="menu">
-            <Link to="/" className="menu__link">
-              About us
-            </Link>
-            <Link to="/" className="menu__link">
-              Features
-            </Link>
-            <Link to="/" className="menu__link">
-              Tokens
-            </Link>
-          </div>
         </nav>
         <div className="account">
           <div className="account__notification">
@@ -33,16 +22,13 @@ const Nav = () => {
           </div>
           <div className="account__inner">
             <Link to="/" className="account__profilePicture">
-              <img src="images/pp.png" alt="Profile pictire" />
+              <img src="images/moon.svg" alt="Profile pictire" />
             </Link>
             <div className="account__userInfo">
-              <div className="account__userName">Magomed Aliev</div>
-              <div className="account__userLicenseId">Driving license ID: 11222343086</div>
+              <div className="account__userName">Хадидже Мочиева</div>
+              <div className="account__userLicenseId">mochievakh16@bk.ru</div>
             </div>
           </div>
-          <select className="headerSelect" name="" id="">
-            <option value="En">En</option>
-          </select>
         </div>
       </header>
       <header className="headerMobile">
@@ -62,7 +48,7 @@ const Nav = () => {
             </div>
             <div className="account__inner">
               <Link to="/" className="account__profilePicture">
-                <img src="images/pp.png" alt="Profile pictire" />
+                <img src="/src/assets/img/Ellipse 1.png" alt="Profile pictire" />
               </Link>
             </div>
             <select className="headerSelect" name="" id=""></select>

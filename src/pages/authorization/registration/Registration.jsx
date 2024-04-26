@@ -36,15 +36,15 @@ const Registration = () => {
       <section className="registration">
         <div className="registrationInner">
           <div className="registration__text">
-            <h1 className="registration__title">Sign up</h1>
+            <h1 className="registration__title">Зарегистрироваться</h1>
           </div>
           <form onSubmit={sendData}>
             <div className="formInner">
               <div className="inputbox">
-                <label htmlFor="name">Full name (as in passport)</label>
+                <label htmlFor="name">Полное имя (как в паспорте)</label>
                 <input
                   type="text"
-                  placeholder="Khalid Umalatov"
+                  placeholder="Хадидже Мочиева"
                   name="name"
                   id="name"
                   value={name}
@@ -54,10 +54,10 @@ const Registration = () => {
               </div>
 
               <div className="inputbox">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Почта</label>
                 <input
                   type="text"
-                  placeholder="emailexample@gmail.com"
+                  placeholder="email@mail.com"
                   name="email"
                   id="email"
                   value={email}
@@ -67,10 +67,10 @@ const Registration = () => {
               </div>
 
               <div className="inputbox">
-                <label htmlFor="psw">Password</label>
+                <label htmlFor="psw">Пароль</label>
                 <input
                   type="password"
-                  placeholder="Enter your password"
+                  placeholder="Введите свой пароль"
                   name="psw"
                   id="psw"
                   value={password}
@@ -81,14 +81,14 @@ const Registration = () => {
 
               <div className="inputbox">
                 <label htmlFor="confirm_psw" className="flex-sb">
-                  Confirm password
+                  Подтвердите пароль
                   {password !== password2 && (
-                    <span style={{ color: 'red', opacity: '.9' }}>Password mismatch!</span>
+                    <span style={{ color: 'red', opacity: '.9' }}>Пароли не совпадают!</span>
                   )}
                 </label>
                 <input
                   type="password"
-                  placeholder="Enter your password"
+                  placeholder="Введите свой пароль"
                   name="confirm_psw"
                   id="confirm_psw"
                   value={password2}
@@ -122,10 +122,10 @@ const Registration = () => {
                 </div>
               </div>
               <button type="submit" className="primaryBtn">
-                Sign up
+                Зарегистрироваться
               </button>
               <p className="registration__link">
-                Already have an account? &nbsp;
+                Уже есть аккаунт &nbsp;
                 <Link to="/authorization">Log in</Link>
               </p>
             </div>

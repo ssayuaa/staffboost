@@ -1,4 +1,4 @@
-const MyCarsSvg = ({ active }) => {
+const MyTasksSvg = ({ active }) => {
   return (
     <svg
       className={'sidebar__icon ' + (active && 'sidebar__icon_active')}
@@ -31,4 +31,4 @@ const MyCarsSvg = ({ active }) => {
   );
 };
 
-export default MyCarsSvg;
+export default MyTasksSvg;

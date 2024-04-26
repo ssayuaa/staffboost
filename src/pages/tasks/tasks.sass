@@ -60,7 +60,7 @@
     @media (max-width: 767px)
       width: 88px
 
-.myCars
+.myTasks
   position: relative
   display: flex
   flex-direction: column
@@ -85,7 +85,7 @@
       margin-bottom: 24px
       font-size: 24px
 
-.carCatalog
+.tasksCatalog
   display: flex
   flex-wrap: wrap
   gap: 28px 24px
@@ -103,7 +103,7 @@
     &::-webkit-scrollbar 
       display: none
 
-.carCard
+.taskCard
   width: 360px
   background-color: #101010
   border-radius: 16px
@@ -129,16 +129,6 @@
     margin-bottom: 4px
   &__subtitle
     color: #72767C
-  &__carImg
-    display: flex
-    justify-content: center
-    img
-      max-width: 233px
-      height: 123px
-      object-fit: cover
-    &_reversed
-      -webkit-transform: scaleX(-1)
-      transform: scaleX(-1)
   &__info
     display: flex
     align-items: center
@@ -149,18 +139,37 @@
     align-items: center
   &__number
     display: flex
-    gap: 4px
+    gap: 10px
     span
       color: #E0E4E7
-      font-size: 18px
+      font-size: 16px
   &__manual
     display: flex
     gap: 5px
     span
       color: #E0E4E7
-  &__km
-    font-size: 18px
+  &__data
+    font-size: 16px
     font-weight: 500
+
+.tasksBtn
+  display: flex
+  &__first
+    padding: 5px 20px
+    background-color: rgba(102, 102, 255, 1)
+    color: rgba(255, 255, 255, 1)
+    border-radius: 10px
+    font-size: 14px
+  &__second
+    padding: 5px 20px
+    background-color: rgba(255, 99, 112, 1)
+    color: rgba(255, 255, 255, 1)
+    border-radius: 10px
+    font-size: 14px
+    margin-left: 20px
+
+
+
 
 .addCar
   position: relative

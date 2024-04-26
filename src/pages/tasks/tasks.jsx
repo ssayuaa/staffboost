@@ -9,52 +9,53 @@ import './tasks.sass';
 const Tasks = () => {
   const [isOpenForm, setIsOpenForm] = useState(false);
   const plusBtn = useRef(null);
-  //carCard_hidden
+  //taskCard_hidden
   return (
     <div>
       <Nav />
       <main className="content">
         <Sidebar indexActiveEl={0} />
         <section
-          className="myCars"
+          className="myTasks"
           onClick={(e) => plusBtn.current !== e.target && setIsOpenForm(false)}>
-          <div className="myCars__title">My cars</div>
+          <div className="myTasks__title">Задачи</div>
           <div className="selectWrapper">
             <div className="selectContainer">
               <select className="select" name="" id="">
-                <option value="New">New</option>
+                <option value="today">Сегодня</option>
               </select>
               <select className="select select_sm" name="" id="">
-                <option value="New">all</option>
+                <option value="all">Все</option>
               </select>
             </div>
             <div className="iconsContainer">
-              <img src="images/gray-dashboard.svg" alt="Dashboard icon" />
-              <img src="images/filter.svg" alt="Filter icon" />
+              <img src="images/filter2.svg" alt="Filter icon" />
             </div>
           </div>
-          <div className="carCatalog">
+          <div className="tasksCatalog">
             <div className="catalog-card">
-              <div className="carCard">
+              <div className="taskCard">
                 <div>
-                  <div className="carCard__title">Tesla Model S 2013</div>
-                  <div className="carCard__subtitle">Coupe</div>
+                  <div className="taskCard__title">Название задачи</div>
+                  <div className="taskCard__subtitle">Имя сотрудника</div>
                 </div>
-                <div className="carCard__carImg carCard__carImg_reversed">
-                  <img src="images/car-img-1.png" alt="" />
-                </div>
-                <div className="carCard__info">
-                  <div className="carCard__infoLeftCol">
-                    <div className="carCard__number">
-                      <img src="images/person-icon.svg" alt="Person icon" />
-                      <span>4</span>
-                    </div>
-                    <div className="carCard__manual">
-                      <img src="images/reverse-icon.svg" alt="Reverse icon" />
-                      <span>Manual</span>
+                
+                <div className="taskCard__info">
+                  <div className="taskCard__infoLeftCol">
+                    <div className="taskCard__number">
+                      <img src="images/vector.svg" alt="Clock icon" />
+                      <span>Назначен</span>
                     </div>
                   </div>
-                  <div className="carCard__km">38.K KM</div>
+                  <div className="taskCard__data">06.04.2024</div>
+                </div>
+                <div className='tasksBtn'>
+                <button type="submit" className="tasksBtn__first">
+                    Изменить
+                </button>
+                <button type="submit" className="tasksBtn__second">
+                    Удалить
+                </button>
                 </div>
               </div>
             </div>
