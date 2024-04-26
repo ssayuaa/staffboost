@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './nav.sass';
 
 const Nav = () => {
+  const auth = useSelector((state) => state.auth.auth);
   return (
     <>
       <header className="header">
@@ -22,11 +24,11 @@ const Nav = () => {
           </div>
           <div className="account__inner">
             <Link to="/" className="account__profilePicture">
-              <img src="images/moon.svg" alt="Profile pictire" />
+              {auth.image ? <img src="images/moon.svg" alt="Profile pictire" /> : auth.name[0]}
             </Link>
             <div className="account__userInfo">
-              <div className="account__userName">Хадидже Мочиева</div>
-              <div className="account__userLicenseId">mochievakh16@bk.ru</div>
+              <div className="account__userName">{auth.name}</div>
+              <div className="account__userLicenseId">{auth.email}</div>
             </div>
           </div>
         </div>

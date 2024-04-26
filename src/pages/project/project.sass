@@ -277,7 +277,7 @@
   &__secondRow
     display: flex
     align-items: center
-    justify-content: space-between
+    flex-shrink: 0
     padding: 14px 0
     border-top: 1px solid #1E1E1E
     @media (max-width: 767px)
@@ -287,6 +287,9 @@
     color: #848484
     font-size: 14px
     font-weight: 500
+    width: 180px
+    &:last-child
+      width: auto
     @media (max-width: 1200px)
       font-size: 15px
     @media (max-width: 767px)
@@ -298,7 +301,7 @@
   &__infoRow
     display: flex
     align-items: center
-    justify-content: space-between
+   
     padding: 14px 0
     border-top: 1px solid #1E1E1E
     @media (max-width: 767px)
@@ -308,6 +311,10 @@
     color: #E0E4E7
     font-size: 13px
     font-weight: 500
+    width: 180px
+    flex-shrink: 0
+    &:last-child
+      width: auto
     @media (max-width: 1200px)
       font-size: 14px
     @media (max-width: 767px)

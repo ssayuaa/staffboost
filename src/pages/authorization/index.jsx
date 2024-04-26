@@ -18,9 +18,13 @@ const Authorization = () => {
   const dispatch = useDispatch();
   const sendData = (e) => {
     e.preventDefault();
-    if (auth.email === email && auth.password === password) {
+    if (
+      auth.some((item) => item.email === email) &&
+      auth.some((item) => item.password === password)
+    ) {
       navigate('/');
-      dispatch(setAuth(auth));
+      localStorage.setItem('activeEmail', email);
+      dispatch(setAuth(auth.filter((item) => item.email === email)[0]));
       console.log('dsafsdf');
     } else {
       setError('Данные введены неверно');

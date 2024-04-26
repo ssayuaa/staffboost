@@ -3,7 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 export const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    auth: JSON.parse(localStorage.getItem('auth')),
+    auth: JSON.parse(localStorage.getItem('auth')).filter(
+      (item) => item.email === localStorage.getItem('activeEmail'),
+    )[0],
   },
   reducers: {
     setAuth(state, { payload }) {

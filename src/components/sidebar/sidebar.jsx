@@ -26,14 +26,22 @@ const Sidebar = ({ indexActiveEl }) => {
             <MyTasksSvg active={indexActiveEl === 0 && true} />
             <span>Команда</span>
           </Link>
-          <Link to="/" className={`sidebar__link ${indexActiveEl === 1 && 'sidebar__link_active'}`}>
+          <Link
+            to="/tasks"
+            className={`sidebar__link ${indexActiveEl === 1 && 'sidebar__link_active'}`}>
             <AssetsSvg active={indexActiveEl === 1 && true} />
             <span>Доска</span>
           </Link>
-          <Link to="/" className={`sidebar__link ${indexActiveEl === 3 && 'sidebar__link_active'}`}>
+          <Link
+            to="/team"
+            className={`sidebar__link ${indexActiveEl === 3 && 'sidebar__link_active'}`}>
+            <ServicesSvg active={indexActiveEl === 3 && true} />
+            <span>Сотрудники</span>
+          </Link>
+          {/* <Link to="/" className={`sidebar__link ${indexActiveEl === 3 && 'sidebar__link_active'}`}>
             <ServicesSvg active={indexActiveEl === 3 && true} />
             <span>Рейтинг</span>
-          </Link>
+          </Link> */}
           <Link
             to="/chats"
             className={`sidebar__link ${indexActiveEl === 5 && 'sidebar__link_active'}`}>

@@ -16,20 +16,35 @@ const Registration = () => {
   const sendData = (e) => {
     e.preventDefault();
     if (password === password2) {
-      localStorage.setItem(
-        'auth',
-        JSON.stringify({
-          name,
-          email,
-          password,
-          role,
-        }),
-      );
+      localStorage.getItem('auth')
+        ? localStorage.setItem(
+            'auth',
+            JSON.stringify([
+              ...JSON.parse(localStorage.getItem('auth')),
+              {
+                name,
+                email,
+                password,
+                role,
+              },
+            ]),
+          )
+        : localStorage.setItem(
+            'auth',
+            JSON.stringify([
+              {
+                name,
+                email,
+                password,
+                role,
+              },
+            ]),
+          );
 
       navigate('/authorization');
     }
   };
-  console.log(role);
+
   return (
     <>
       <Nav />
