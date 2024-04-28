@@ -9,6 +9,7 @@ import MessagesSvg from '../../assets/svg/sidebar/MessagesSvg';
 import SettingsSvg from '../../assets/svg/sidebar/SettingsSvg';
 import HelpSvg from '../../assets/svg/HelpSvg';
 import SignOutSvg from '../../assets/svg/SignOutSvg';
+import DeskSvg from '../../assets/svg/sidebar/DeskSvg';
 
 import './sidebar.sass';
 import { setAuth } from '../../redux/authSlice/authSlice';
@@ -22,16 +23,14 @@ const Sidebar = ({ indexActiveEl }) => {
     <div>
       <div className="sidebar">
         <div>
-          <Link 
-            to="/"
-            className={`sidebar__link ${indexActiveEl === 0 && 'sidebar__link_active'}`}>
+          <Link to="/" className={`sidebar__link ${indexActiveEl === 0 && 'sidebar__link_active'}`}>
             <MyTasksSvg active={indexActiveEl === 0 && true} />
-            <span>Статус</span>
+            <span>Главная</span>
           </Link>
-          <Link 
+          <Link
             to="/tasks"
             className={`sidebar__link ${indexActiveEl === 1 && 'sidebar__link_active'}`}>
-            <AssetsSvg active={indexActiveEl === 1 && true} />
+            <DeskSvg active={indexActiveEl === 1 && true} />
             <span>Доска</span>
           </Link>
           <Link
