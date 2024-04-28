@@ -22,11 +22,13 @@ const Sidebar = ({ indexActiveEl }) => {
     <div>
       <div className="sidebar">
         <div>
-          <Link to="/" className={`sidebar__link ${indexActiveEl === 0 && 'sidebar__link_active'}`}>
+          <Link 
+            to="/"
+            className={`sidebar__link ${indexActiveEl === 0 && 'sidebar__link_active'}`}>
             <MyTasksSvg active={indexActiveEl === 0 && true} />
-            <span>Команда</span>
+            <span>Статус</span>
           </Link>
-          <Link
+          <Link 
             to="/tasks"
             className={`sidebar__link ${indexActiveEl === 1 && 'sidebar__link_active'}`}>
             <AssetsSvg active={indexActiveEl === 1 && true} />

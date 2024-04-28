@@ -36,8 +36,8 @@ const Nav = () => {
       <header className="headerMobile">
         <nav className="headerMobile__nav">
           <Link to="/" className="headerMobile__logo">
-            <img className="headerMobile__firstImg" src="images/logo-1.svg" alt="Logo" />
-            <img className="headerMobile__secondImg" src="images/logo-2.svg" alt="Logo" />
+            <img className="headerMobile__firstImg" src="images/logo1.png" alt="Logo" />
+            <img className="headerMobile__secondImg" src="images/logo2.png" alt="Logo" />
           </Link>
           <div className="account">
             <div className="account__notification">

@@ -7,7 +7,7 @@ import Sidebar from '../../components/sidebar/sidebar';
 import './tasks.sass';
 
 const Tasks = () => {
-  const [isOpenForm, setIsOpenForm] = useState(false);
+  const setIsOpenForm = useState(false);
   const plusBtn = useRef(null);
   //taskCard_hidden
   return (
@@ -60,64 +60,6 @@ const Tasks = () => {
               </div>
             </div>
           </div>
-          {isOpenForm && (
-            <div className="addCar__wrap">
-              <div className="blur" onClick={() => setIsOpenForm(false)}></div>{' '}
-              <section className="addCar">
-                <h1 className="addCar__title">Add your auto</h1>
-                <form action="">
-                  <div className="formInner">
-                    <div className="inputbox">
-                      <label htmlFor="brand">Brand</label>
-                      <input
-                        type="text"
-                        placeholder="Khalid Umalatov"
-                        name="brand"
-                        id="brand"
-                        required
-                      />
-                    </div>
-
-                    <div className="inputbox">
-                      <label htmlFor="model">Model</label>
-                      <input
-                        type="text"
-                        placeholder="emailexample@gmail.com"
-                        name="model"
-                        id="model"
-                        required
-                      />
-                    </div>
-
-                    <div className="inputbox">
-                      <label htmlFor="year">Year</label>
-                      <input
-                        type="text"
-                        placeholder="Enter your password"
-                        name="year"
-                        id="year"
-                        required
-                      />
-                    </div>
-
-                    <div className="inputbox">
-                      <label htmlFor="yearsOfOwnership">Years of ownership</label>
-                      <input
-                        type="text"
-                        placeholder="emailexample@gmail.com"
-                        name="yearsOfOwnership"
-                        id="yearsOfOwnership"
-                        required
-                      />
-                    </div>
-                    <button type="submit" className="primaryBtn">
-                      Add
-                    </button>
-                  </div>
-                </form>
-              </section>
-            </div>
-          )}
         </section>
       </main>
     </div>

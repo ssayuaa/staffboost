@@ -1,0 +1,113 @@
+.team
+  margin: 32px
+  width: 100%
+  height: calc(100% - 64px)
+  display: flex
+  background: #101010
+  border-radius: 20px
+  &__teams
+    height: 100%
+    width: 100%
+    overflow-y: scroll 
+    &::-webkit-scrollbar
+      display: none
+      
+  @media (max-width: 1200px)
+    margin: 20px 48px
+  @media (max-width: 767px)
+    border-radius: 0px
+    margin: 0
+    height: calc(100% - 55px)
+  &__Col
+    display: flex
+    height: 91px
+    align-items: center
+    padding: 24px 20px
+    font-size: 24px
+    font-weight: 600
+    
+    
+    @media (max-width: 1200px)
+      border-top-right-radius: 20px
+      border-right: 0
+    @media (max-width: 767px)
+      border-radius: 0
+      padding: 20px 16px
+      font-size: 20px
+      height: 77px
+  
+  &__job
+    color: #969FA3
+    line-height: 24px
+    width: 100%
+    max-width: 252px
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+    @media (max-width: 1200px)
+      max-width: 478px
+    @media (max-width: 767px)
+      max-width: 228px
+
+  &__userRow
+    display: flex
+    align-items: center
+    gap: 16px
+    padding: 16px 60px 16px 20px
+    @media (max-width: 767px)
+      gap: 13px
+      padding: 13px 16px
+      overflow: hidden
+      width: calc(100% - 20px)
+  &__userProfilePicture
+    width: 60px
+    height: 60px
+    flex-shrink: 0
+    @media (max-width: 767px)
+      width: 50px
+      height: 50px
+    img
+      width: 100%
+      border-radius: 50%
+  &__userInfoCol
+    width: 100%
+    overflow: hidden
+  &__userNameRow
+    display: flex
+    flex-grow: 1
+    justify-content: space-between
+  &__name
+    font-size: 20px
+    font-weight: 500
+    line-height: 30px
+    display: flex
+    align-items: center
+    gap: 8px
+  &__jobRow
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.teamBtn
+    width: 30%
+
+    &__invite
+        padding: 5px 50px
+        background-color: rgba(255, 99, 112, 1)
+        color: rgba(255, 255, 255, 1)
+        border-radius: 10px
+        font-size: 14px
+    &__second
+        padding: 5px 50px
+        background-color: rgba(102, 102, 255, 1)
+        color: rgba(255, 255, 255, 1)
+        border-radius: 10px
+        font-size: 14px
+
+
+
+.team-col
+  height: 100%
+  width: 100%
+  @media (max-width: 1200px)
+    width: 100%

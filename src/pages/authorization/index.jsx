@@ -25,7 +25,6 @@ const Authorization = () => {
       navigate('/');
       localStorage.setItem('activeEmail', email);
       dispatch(setAuth(auth.filter((item) => item.email === email)[0]));
-      console.log('dsafsdf');
     } else {
       setError('Данные введены неверно');
     }
@@ -37,16 +36,16 @@ const Authorization = () => {
         <div className="registrationInner">
           <div className="registration__text">
             <h1 className="registration__title">Вход</h1>
-            <p className="registration__subtitle">Please authorize to start using the platform</p>
+            <p className="registration__subtitle">Пожалуйста, авторизуйтесь, чтобы начать пользоваться платформой</p>
             {error && <span style={{ color: 'red' }}>{error}</span>}
           </div>
           <form action="" onSubmit={sendData}>
             <div className="formInner">
               <div className="inputbox">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Почта</label>
                 <input
                   type="text"
-                  placeholder="emailexample@gmail.com"
+                  placeholder="email@mail.com"
                   name="email"
                   id="email"
                   value={email}
@@ -56,10 +55,10 @@ const Authorization = () => {
               </div>
 
               <div className="inputbox">
-                <label htmlFor="psw">Password</label>
+                <label htmlFor="psw">Пароль</label>
                 <input
                   type="password"
-                  placeholder="Enter your password"
+                  placeholder="Введите свой пароль"
                   name="psw"
                   id="psw"
                   value={password}
@@ -69,11 +68,11 @@ const Authorization = () => {
               </div>
 
               <button type="submit" className="primaryBtn">
-                Log in
+                Войти
               </button>
 
               <p href="#" className="registration__link">
-                Don’t have an account? <Link to="/registration">Sign up</Link>
+                У Вас нет аккаунта? <Link to="/registration">Зарегистрироваться</Link>
               </p>
             </div>
           </form>
