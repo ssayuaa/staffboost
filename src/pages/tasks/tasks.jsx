@@ -97,19 +97,19 @@ const Tasks = () => {
             ))}
           </div>
           {isOpenForm && (
-            <div className="addCar__wrap">
+            <div className="addTask__wrap">
               <div className="blur" onClick={() => setIsOpenForm(false)}></div>
-              <section className="addCar">
-                <h1 className="addCar__title">Add your auto</h1>
+              <section className="addTask">
+                <h1 className="addTask__title">Добавление задачи</h1>
                 <form action="">
                   <div className="formInner">
                     <div className="inputbox">
-                      <label htmlFor="brand">Задача</label>
+                      <label htmlFor="names">Задача</label>
                       <input
                         type="text"
-                        placeholder="Khalid Umalatov"
-                        name="brand"
-                        id="brand"
+                        placeholder="Название задачи"
+                        name="names"
+                        id="names"
                         value={newTask.name}
                         onChange={(e) =>
                           setNewTask((prev) => {
@@ -121,12 +121,12 @@ const Tasks = () => {
                     </div>
 
                     <div className="inputbox">
-                      <label htmlFor="model">Описание задачи</label>
+                      <label htmlFor="descriptions">Описание</label>
                       <input
                         type="text"
-                        placeholder="emailexample@gmail.com"
-                        name="model"
-                        id="model"
+                        placeholder="Описание задачи"
+                        name="descriptions"
+                        id="descriptions"
                         value={newTask.description}
                         onChange={(e) =>
                           setNewTask((prev) => {
@@ -138,12 +138,12 @@ const Tasks = () => {
                     </div>
 
                     <div className="inputbox">
-                      <label htmlFor="year">Сотрудник</label>
+                      <label htmlFor="emails">Сотрудник</label>
                       <input
                         type="text"
-                        placeholder="Enter your password"
-                        name="year"
-                        id="year"
+                        placeholder="Введите почту сотрудника"
+                        name="emails"
+                        id="emails"
                         value={newTask.employee}
                         onChange={(e) =>
                           setNewTask((prev) => {
@@ -155,12 +155,12 @@ const Tasks = () => {
                     </div>
 
                     <div className="inputbox">
-                      <label htmlFor="yearsOfOwnership">Дедлайн</label>
+                      <label htmlFor="dates">Дедлайн</label>
                       <input
                         type="text"
-                        placeholder="emailexample@gmail.com"
-                        name="yearsOfOwnership"
-                        id="yearsOfOwnership"
+                        placeholder="Дата"
+                        name="dates"
+                        id="dates"
                         value={newTask.data}
                         onChange={(e) =>
                           setNewTask((prev) => {
@@ -171,7 +171,7 @@ const Tasks = () => {
                       />
                     </div>
                     <button type="submit" className="primaryBtn" onClick={addTask}>
-                      Add
+                      Добавить
                     </button>
                   </div>
                 </form>

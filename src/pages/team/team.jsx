@@ -10,11 +10,11 @@ const Team = () => {
   const [team, setTeam] = useState([
     {
       id: 0,
-      name: 'Deniel Hawkins',
-      job: 'Руководитель проекта',
-      image: 'images/pp7.svg',
+      name: 'Арбита Шаувхалова',
+      job: 'Frontend-разработчик',
+      image: 'images/pp8.svg',
       status: false,
-      email: 'asfdsfsdf-sdfdsfdsf@gmail.com',
+      email: 'shauvkhalova03@bk.ru',
     },
     {
       id: 1,
@@ -22,16 +22,57 @@ const Team = () => {
       job: 'Backend-разработчик',
       image: 'images/pp3.svg',
       status: true,
-      email: 'asfdsfsdf',
+      email: 'kuperrrrr@mail.ru',
     },
     {
       id: 2,
-      name: 'Джейн Купер',
-      job: 'Backend-разработчик',
-      image: 'images/pp3.svg',
+      name: 'Петимат Гишларкаева',
+      job: 'Главный специалист',
+      image: 'images/pp5.svg',
       status: true,
-      email: 'asfdsfsdf',
+      email: 'gishlarkaeva.p@mail.ru',
     },
+    {
+      id: 3,
+      name: 'Deniel Hawkins',
+      job: 'Руководитель проекта',
+      image: 'images/pp7.svg',
+      status: true,
+      email: 'hawkins005@mail.ru',
+    },
+    {
+      id: 4,
+      name: 'Крунгян Марина',
+      job: 'Дизайнер',
+      image: 'images/pp1.svg',
+      status: true,
+      email: 'marina.krungyan@mail.ru',
+    },
+    {
+      id: 5,
+      name: 'Aiza Zyazikova',
+      job: 'Рилсмейкер',
+      image: 'images/pp6.svg',
+      status: true,
+      email: 'zyazikova.a@mail.ru',
+    },
+    {
+      id: 6,
+      name: 'Сумаййа Башаева',
+      job: 'Контент-мейкер',
+      image: 'images/pp2.svg',
+      status: true,
+      email: 'miamin13@mail.ru',
+    },
+    {
+      id: 6,
+      name: 'Севиль Уильямсон',
+      job: 'Графический дизайнер',
+      image: 'images/pp4.svg',
+      status: true,
+      email: 'sevu13shka@mail.ru',
+    },
+
   ]);
   return (
     <div>
@@ -69,133 +110,6 @@ const Team = () => {
                   </div>
                 </div>
               ))}
-
-              {/* <div className="team__userRow">
-                <Link href="#" className="team__userProfilePicture">
-                  <img src="images/pp3.svg" alt="" />
-                </Link>
-                <div className="team__userInfoCol">
-                  <div className="team__userNameRow">
-                    <span className="team__name">Джейн Купер</span>
-                  </div>
-                  <div className="team__jobRow">
-                    <span className="team__job">Backend-разработчик </span>
-                  </div>
-                </div>
-                <div className="teamBtn">
-                  <button type="submit" className="teamBtn__second">
-                    Написать сообщение
-                  </button>
-                </div>
-              </div>
-              <div className="team__userRow">
-                <Link href="#" className="team__userProfilePicture">
-                  <img src="images/pp5.svg" alt="" />
-                </Link>
-                <div className="team__userInfoCol">
-                  <div className="team__userNameRow">
-                    <span className="team__name">Петимат Гишларкаева</span>
-                  </div>
-                  <div className="team__jobRow">
-                    <span className="team__job">Главный специалист</span>
-                  </div>
-                </div>
-                <div className="teamBtn">
-                  <button type="submit" className="teamBtn__second">
-                    Написать сообщение
-                  </button>
-                </div>
-              </div>
-              <div className="team__userRow">
-                <Link href="#" className="team__userProfilePicture">
-                  <img src="images/pp1.svg" alt="" />
-                </Link>
-                <div className="team__userInfoCol">
-                  <div className="team__userNameRow">
-                    <span className="team__name">Крунгян Марина</span>
-                  </div>
-                  <div className="team__jobRow">
-                    <span className="team__job">Дизайнер</span>
-                  </div>
-                </div>
-                <div className="teamBtn">
-                  <button type="submit" className="teamBtn__second">
-                    Написать сообщение
-                  </button>
-                </div>
-              </div>
-              <div className="team__userRow">
-                <Link href="#" className="team__userProfilePicture">
-                  <img src="images/pp6.svg" alt="" />
-                </Link>
-                <div className="team__userInfoCol">
-                  <div className="team__userNameRow">
-                    <span className="team__name">Aiza Zyazikova</span>
-                  </div>
-                  <div className="team__jobRow">
-                    <span className="team__job">Рилсмейкер</span>
-                  </div>
-                </div>
-                <div className="teamBtn">
-                  <button type="submit" className="teamBtn__second">
-                    Написать сообщение
-                  </button>
-                </div>
-              </div>
-              <div className="team__userRow">
-                <Link href="#" className="team__userProfilePicture">
-                  <img src="images/pp4.svg" alt="" />
-                </Link>
-                <div className="team__userInfoCol">
-                  <div className="team__userNameRow">
-                    <span className="team__name">Севиль Уильямсон</span>
-                  </div>
-                  <div className="team__jobRow">
-                    <span className="team__job">Графический дизайнер</span>
-                  </div>
-                </div>
-                <div className="teamBtn">
-                  <button type="submit" className="teamBtn__second">
-                    Написать сообщение
-                  </button>
-                </div>
-              </div>
-              <div className="team__userRow">
-                <Link href="#" className="team__userProfilePicture">
-                  <img src="images/pp8.svg" alt="" />
-                </Link>
-                <div className="team__userInfoCol">
-                  <div className="team__userNameRow">
-                    <span className="team__name">Арбита Шаувхалова</span>
-                  </div>
-                  <div className="team__jobRow">
-                    <span className="team__job team__job">Frontend-разработчик</span>
-                  </div>
-                </div>
-                <div className="teamBtn">
-                  <button type="submit" className="teamBtn__invite">
-                    Приглашение отправлено
-                  </button>
-                </div>
-              </div>
-              <div className="team__userRow">
-                <Link href="#" className="team__userProfilePicture">
-                  <img src="images/pp2.svg" alt="" />
-                </Link>
-                <div className="team__userInfoCol">
-                  <div className="team__userNameRow">
-                    <span className="team__name">Сумаййа Башаева</span>
-                  </div>
-                  <div className="team__jobRow">
-                    <span className="team__job">Контент-мейкер</span>
-                  </div>
-                </div>
-                <div className="teamBtn">
-                  <button type="submit" className="teamBtn__second">
-                    Написать сообщение
-                  </button>
-                </div>
-              </div> */}
             </div>
           </div>
         </section>

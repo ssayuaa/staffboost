@@ -141,7 +141,7 @@ const Registration = () => {
               </button>
               <p className="registration__link">
                 Уже есть аккаунт &nbsp;
-                <Link to="/authorization">Log in</Link>
+                <Link to="/authorization">Войти</Link>
               </p>
             </div>
           </form>
