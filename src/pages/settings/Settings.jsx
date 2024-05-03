@@ -11,14 +11,14 @@ const Settings = () => {
     <div>
       <Nav />
       <div className="flex margin">
-        <Sidebar indexActiveEl={6} />
+        <Sidebar indexActiveEl={4} />
         <div className="leftContent">
           <section className="alert">
             <div className="alert__text">
               <img src="images/alert-circle.svg" alt="Alert circle icon" />
               <span>
-              В настоящее время ваша учетная запись не подтверждена, 
-              пожалуйста, предоставьте нам дополнительную информацию, чтобы начать пользоваться платформой
+                В настоящее время ваша учетная запись не подтверждена, пожалуйста, предоставьте нам
+                дополнительную информацию, чтобы начать пользоваться платформой
               </span>
             </div>
             <img className="alert__closeIcon" src="images/close.svg" alt="Close icon" />
@@ -47,7 +47,13 @@ const Settings = () => {
                 <div className="formInner">
                   <div className="inputbox">
                     <label htmlFor="name">Полное имя (как в паспорте)</label>
-                    <input type="text" placeholder="Хадидже Мочиева" name="name" id="name" required />
+                    <input
+                      type="text"
+                      placeholder="Хадидже Мочиева"
+                      name="name"
+                      id="name"
+                      required
+                    />
                   </div>
 
                   <div className="inputbox">
@@ -98,8 +104,8 @@ const Settings = () => {
                     <div className="verification__text">
                       <span>Подтверждение</span>
                       <p>
-                      В настоящее время ваша учетная запись не подтверждена, пожалуйста, 
-                      предоставьте нам дополнительную информацию для начала
+                        В настоящее время ваша учетная запись не подтверждена, пожалуйста,
+                        предоставьте нам дополнительную информацию для начала
                       </p>
                     </div>
                     <Link to="/" className="secondaryBtn secondaryBtn_lg">

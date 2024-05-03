@@ -72,17 +72,21 @@ const Team = () => {
       status: true,
       email: 'sevu13shka@mail.ru',
     },
-
   ]);
   return (
     <div>
       <Nav />
       <div className="content">
-        <Sidebar indexActiveEl={0} />
+        <Sidebar indexActiveEl={2} />
         <section className="team">
           <div className="team__teams">
+            <div className="team__Col">
+              <span>Сотрудники</span>
+              <button type="submit" className="teamBtn__second">
+                Добавить
+              </button>
+            </div>
             <div className="team-col">
-              <div className="team__Col">Сотрудники</div>
               {team.map(({ name, job, image, id, status, email }) => (
                 <div className="team__userRow" key={id}>
                   <Link href="#" className="team__userProfilePicture">

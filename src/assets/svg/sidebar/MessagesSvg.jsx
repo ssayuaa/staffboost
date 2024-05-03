@@ -1,5 +1,4 @@
 const MessagesSvg = ({ active }) => {
-  //className={'sidebar__icon ' + (active && 'sidebar__icon_active')}
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

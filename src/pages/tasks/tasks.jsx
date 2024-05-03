@@ -42,7 +42,7 @@ const Tasks = () => {
     <div>
       <Nav />
       <main className="content">
-        <Sidebar indexActiveEl={0} />
+        <Sidebar indexActiveEl={1} />
         <section className="myTasks">
           <div className="myTasks__title">Задачи</div>
           <div className="selectWrapper">

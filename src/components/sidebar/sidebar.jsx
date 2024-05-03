@@ -12,68 +12,70 @@ import HelpSvg from '../../assets/svg/HelpSvg';
 import SignOutSvg from '../../assets/svg/SignOutSvg';
 import DeskSvg from '../../assets/svg/sidebar/DeskSvg';
 
-import './sidebar.sass'; 
 import { setAuth } from '../../redux/authSlice/authSlice';
 
+import './sidebar.sass';
 
 const Sidebar = ({ indexActiveEl }) => {
   const dispatch = useDispatch();
   const handleSignOut = () => {
     dispatch(setAuth(''));
+    localStorage.removeItem('activeEmail');
   };
   return (
     <div>
       <div className="sidebar">
         <div>
-          <Link 
-            to="/" 
-            className={`sidebar__link ${indexActiveEl === 0 && 'sidebar__link_active'}`}>
-            <MyMainSvg active={indexActiveEl === 0 && true} />
+          <Link to="/" className={`sidebar__link ${indexActiveEl === 0 && 'sidebar__link_active'}`}>
+            <span className="sidebar__icon">
+              <MyMainSvg active={indexActiveEl === 0 && true} />
+            </span>
             <span>Главная</span>
           </Link>
 
           <Link
-            to="/tasks" 
+            to="/tasks"
             className={`sidebar__link ${indexActiveEl === 1 && 'sidebar__link_active'}`}>
-            <DeskSvg active={indexActiveEl === 1 && true} />
+            <span className="sidebar__icon">
+              <DeskSvg active={indexActiveEl === 1 && true} />
+            </span>
             <span>Доска</span>
           </Link>
 
           <Link
             to="/team"
-            className={`sidebar__link ${indexActiveEl === 7 && 'sidebar__link_active'}`}>
-            <DeskSvg active={indexActiveEl === 7 && true} />
+            className={`sidebar__link ${indexActiveEl === 2 && 'sidebar__link_active'}`}>
+            <span className="sidebar__icon">
+              <TeamSvg active={indexActiveEl === 2 && true} />
+            </span>
             <span>Сотрудники</span>
           </Link>
 
           <Link
             to="/chats"
             className={`sidebar__link ${indexActiveEl === 3 && 'sidebar__link_active'}`}>
-            <MessagesSvg active={indexActiveEl === 3 && true} />
+            <span className="sidebar__icon">
+              <MessagesSvg active={indexActiveEl === 3 && true} />
+            </span>
             <span>Сообщения</span>
           </Link>
-          
+
           <Link
             to="/settings"
             className={`sidebar__link ${indexActiveEl === 4 && 'sidebar__link_active'}`}>
-            <SettingsSvg active={indexActiveEl === 4 && true} />
+            <span className="sidebar__icon">
+              <SettingsSvg active={indexActiveEl === 4 && true} />
+            </span>
             <span>Настройки</span>
           </Link>
-
         </div>
 
-        <div>
-          <Link
-            to="/"
-            className={`sidebar__link sidebar__link_margin ${
-              indexActiveEl === 5 && 'sidebar__link_active'
-            }`}>
-            <HelpSvg active={indexActiveEl === 5 && true} />
-            <span>Помощь & Поддержка</span>
-          </Link>
+        <div className="sidebar__out">
           <div onClick={handleSignOut}>
             <Link to="/authorization" className={`sidebar__link ${indexActiveEl === 6}`}>
-              <SignOutSvg />
+              <span className="sidebar__icon">
+                <SignOutSvg />
+              </span>
               <span>Выход</span>
             </Link>
           </div>
