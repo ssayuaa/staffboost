@@ -11,7 +11,8 @@ const Nav = () => {
           <Link to="/" className="logo">
             <img src="images/logo1.png" alt="Logo" />
             <img src="images/logo2.png" alt="Logo" />
-          </Link>\
+          </Link>
+          \
         </nav>
         <div className="account">
           <div className="account__notification">
@@ -24,7 +25,7 @@ const Nav = () => {
           </div>
           <div className="account__inner">
             <Link to="/" className="account__profilePicture">
-              {auth.image ? <img src="images/moon.svg" alt="Profile picture" /> : auth.name[0]}
+              {auth.img ? <img src={'./images/' + auth.img} alt="Profile picture" /> : auth.name[0]}
             </Link>
             <div className="account__userInfo">
               <div className="account__userName">{auth.name}</div>
@@ -50,7 +51,7 @@ const Nav = () => {
             </div>
             <div className="account__inner">
               <Link to="/" className="account__profilePicture">
-              {auth.image ? <img src="images/moon.svg" alt="Profile picture" /> : auth.name[0]}
+                {auth.image ? <img src="images/moon.svg" alt="Profile picture" /> : auth.name[0]}
               </Link>
             </div>
             <select className="headerSelect" name="" id=""></select>

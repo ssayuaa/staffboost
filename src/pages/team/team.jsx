@@ -9,7 +9,8 @@ import './team.sass';
 
 const Team = () => {
   const [isOpenForm, setIsOpenForm] = useState(false);
-  const [team, setTeam] = useState(localStorage.getItem('team') ? JSON.parse(localStorage.getItem('team')) : [],
+  const [team, setTeam] = useState(
+    localStorage.getItem('team') ? JSON.parse(localStorage.getItem('team')) : [],
   );
   const [changeTeamId, setChangeTeamId] = useState(null);
   const [newTeam, setNewTeam] = useState({
@@ -39,7 +40,7 @@ const Team = () => {
   useEffect(() => {
     localStorage.setItem('team', JSON.stringify(team));
   }, [team]);
-  
+
   const auth = useSelector((state) => state.auth.auth);
   return (
     <div>
@@ -50,7 +51,7 @@ const Team = () => {
           <div className="team__teams">
             <div className="team__Col">
               <span>Сотрудники</span>
-              <button type="submit" className="teamBtn__second"  onClick={() => setIsOpenForm(true)}>
+              <button type="submit" className="teamBtn__second" onClick={() => setIsOpenForm(true)}>
                 Добавить
               </button>
             </div>
@@ -70,15 +71,18 @@ const Team = () => {
                     </div>
                   </div>
                   <div className="teamBtn">
-                      <button type="submit" className="teamBtn__invite" onClick={() => setTeam(team.filter((item) => item.id !== id))}>
-                        Удалить сотрудника
-                      </button>
+                    <button
+                      type="submit"
+                      className="teamBtn__invite"
+                      onClick={() => setTeam(team.filter((item) => item.id !== id))}>
+                      Удалить сотрудника
+                    </button>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          
+
           {isOpenForm && (
             <div className="addTeam__wrap">
               <div className="blur" onClick={() => setIsOpenForm(false)}></div>

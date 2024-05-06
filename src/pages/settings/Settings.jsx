@@ -4,9 +4,21 @@ import Nav from '../../components/nav/nav';
 import Sidebar from '../../components/sidebar/sidebar';
 
 import './settings.sass';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAuth } from '../../redux/authSlice/authSlice';
 
 const Settings = () => {
   const pathImage = 'images/moon.svg';
+  const [img, setImg] = useState('');
+  const auth = useSelector((state) => state.auth.auth);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (img !== '') {
+      dispatch(setAuth({ ...auth, img: img.substring(12) }));
+    }
+  }, [img]);
+  console.log(auth);
   return (
     <div>
       <Nav />
@@ -29,7 +41,7 @@ const Settings = () => {
               <div className="registration__userRow">
                 <div className="registration__userInfo">
                   <div className="registration__userProfilePicture">
-                    <img src={pathImage} alt="" />
+                    <img src={'./images/' + auth.img} alt="" />
                   </div>
                   <div className="registration__userWrapper">
                     <p className="registration__userName">Хадидже Мочиева</p>
@@ -39,9 +51,17 @@ const Settings = () => {
                     </div>
                   </div>
                 </div>
-                <Link to="/" className="secondaryBtn btn_hidden secondaryBtn_hidden">
+                <label className="secondaryBtn btn_hidden secondaryBtn_hidden">
                   Изменить фото
-                </Link>
+                  <input
+                    type="file"
+                    name=""
+                    id="file"
+                    className="file"
+                    value={img}
+                    onChange={(e) => setImg(e.target.value)}
+                  />
+                </label>
               </div>
               <form action="">
                 <div className="formInner">

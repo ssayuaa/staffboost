@@ -10,6 +10,7 @@ const Tasks = () => {
   const [tasks, setTasks] = useState(
     localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [],
   );
+  const [title, setTitle] = useState('Добавление задачи');
   const [changeTaskId, setChangeTaskId] = useState(null);
   const [newTask, setNewTask] = useState({
     name: '',
@@ -41,6 +42,7 @@ const Tasks = () => {
     setIsOpenForm(false);
     setChangeTaskId(null);
   };
+  console.log(title);
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
@@ -60,13 +62,26 @@ const Tasks = () => {
                 <option value="all">Все</option>
               </select>
             </div>
-            <div className="iconsContainer" onClick={() => setIsOpenForm(true)}>
+            <div
+              className="iconsContainer"
+              onClick={() => {
+                setIsOpenForm(true);
+                setTitle('Добавление задачи');
+              }}>
               <img src="images/filter2.svg" alt="Filter icon" />
             </div>
           </div>
           <div className="tasksCatalog">
-            {tasks.map(({ name, id, employee, data, souplelim, durlim, bonus }) => (
-              <div className="taskCard" key={id}>
+            {tasks.map(({ name, id, employee, souplelim, durlim, bonus }, i) => (
+              <div
+                className="taskCard"
+                key={id}
+                onClick={(e) => {
+                  setIsOpenForm(true);
+                  setTitle('');
+                  setNewTask(tasks.filter((item) => item.id === id)[0]);
+                  setChangeTaskId(id);
+                }}>
                 <div>
                   <div className="taskCard__title">{name}</div>
                   <div className="taskCard__subtitle">{employee}</div>
@@ -75,18 +90,34 @@ const Tasks = () => {
                 <div className="taskCard__info">
                   <div className="taskCard__infoLeftCol">
                     <div className="taskCard__number">
-                      <img src="images/vector.svg" alt="Clock icon" />
-                      <span>Дедлайн</span>
+                      <svg
+                        width="22"
+                        height="22"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M14.7099 14.18L11.6099 12.33C11.0699 12.01 10.6299 11.24 10.6299 10.61V6.51001M21 11C21 16.52 16.52 21 11 21C5.48 21 1 16.52 1 11C1 5.48 5.48 1 11 1C16.52 1 21 5.48 21 11Z"
+                          stroke={i === 1 ? '#ff6370' : 'white'}
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+
+                      <span style={i === 1 ? { color: '#ff6370' } : {}}>Дедлайн</span>
                     </div>
                   </div>
-                  <div className="taskCard__data">{data}</div>
+                  <div className="taskCard__data">{souplelim}</div>
                 </div>
                 <div className="tasksBtn">
                   <button
                     type="submit"
                     className="tasksBtn__first"
                     onClick={(e) => {
+                      e.stopPropagation();
                       setIsOpenForm(true);
+                      setTitle('Редактирование');
                       setNewTask(tasks.filter((item) => item.id === id)[0]);
                       setChangeTaskId(id);
                     }}>
@@ -103,12 +134,11 @@ const Tasks = () => {
             ))}
           </div>
 
-
           {isOpenForm && (
             <div className="addTask__wrap">
               <div className="blur" onClick={() => setIsOpenForm(false)}></div>
               <section className="addTask">
-                <h1 className="addTask__title">Добавление задачи</h1>
+                {title && <h1 className="addTask__title">{title}</h1>}
                 <form action="">
                   <div className="formInner">
                     <div className="inputbox">
@@ -147,7 +177,7 @@ const Tasks = () => {
                     <div className="inputbox">
                       <label htmlFor="dates">Мягкий Дедлайн</label>
                       <input
-                        type="text"
+                        type="date"
                         placeholder="Дата"
                         name="dates"
                         id="dates"
@@ -163,7 +193,7 @@ const Tasks = () => {
                     <div className="inputbox">
                       <label htmlFor="dates"> Жесткий Дедлайн</label>
                       <input
-                        type="text"
+                        type="date"
                         placeholder="Дата"
                         name="dates"
                         id="dates"
@@ -192,9 +222,11 @@ const Tasks = () => {
                         required
                       />
                     </div>
-                    <button type="submit" className="primaryBtn" onClick={addTask}>
-                      Добавить
-                    </button>
+                    {title !== '' && (
+                      <button type="submit" className="primaryBtn" onClick={addTask}>
+                        {title === 'Редактирование' ? 'Сохранить' : 'Добавить'}
+                      </button>
+                    )}
                   </div>
                 </form>
               </section>
