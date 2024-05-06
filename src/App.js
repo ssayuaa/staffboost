@@ -2,12 +2,12 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Settings from './pages/settings/Settings';
 import Authorization from './pages/authorization';
-import Password from './pages/authorization/password/password';
 import Registration from './pages/authorization/registration/Registration.jsx';
 import Tasks from './pages/tasks/tasks.jsx';
 import Chats from './pages/chats/Chats';
 import Project from './pages/project/Project';
 import Team from './pages/team/team.jsx';
+import Rating from './pages/rating/Rating.jsx';
 
 const App = () => {
   const auth = useSelector((state) => state.auth.auth);
@@ -19,9 +19,10 @@ const App = () => {
       <Route path="/chats" element={auth ? <Chats /> : <Navigate to="/authorization" />} />
       <Route path="/settings" element={auth ? <Settings /> : <Navigate to="/authorization" />} />
       <Route path="/team" element={auth ? <Team /> : <Navigate to="/authorization" />} />
+      <Route path="/rating" element={auth ? <Rating /> : <Navigate to="/authorization" />} />
       <Route path="/authorization" element={auth ? <Navigate to="/" /> : <Authorization />} />
-      <Route path="/authorization/password" element={auth ? <Navigate to="/" /> : <Password />} />
       <Route path="/registration" element={auth ? <Navigate to="/" /> : <Registration />} />
+
     </Routes>
   );
 };

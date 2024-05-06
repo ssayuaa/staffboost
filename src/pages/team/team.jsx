@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import Nav from '../../components/nav/nav';
 import Sidebar from '../../components/sidebar/sidebar';
@@ -7,72 +8,39 @@ import Sidebar from '../../components/sidebar/sidebar';
 import './team.sass';
 
 const Team = () => {
-  const [team, setTeam] = useState([
-    {
-      id: 0,
-      name: 'Арбита Шаувхалова',
-      job: 'Frontend-разработчик',
-      image: 'images/pp8.svg',
-      status: false,
-      email: 'shauvkhalova03@bk.ru',
-    },
-    {
-      id: 1,
-      name: 'Джейн Купер',
-      job: 'Backend-разработчик',
-      image: 'images/pp3.svg',
-      status: true,
-      email: 'kuperrrrr@mail.ru',
-    },
-    {
-      id: 2,
-      name: 'Петимат Гишларкаева',
-      job: 'Главный специалист',
-      image: 'images/pp5.svg',
-      status: true,
-      email: 'gishlarkaeva.p@mail.ru',
-    },
-    {
-      id: 3,
-      name: 'Deniel Hawkins',
-      job: 'Руководитель проекта',
-      image: 'images/pp7.svg',
-      status: true,
-      email: 'hawkins005@mail.ru',
-    },
-    {
-      id: 4,
-      name: 'Крунгян Марина',
-      job: 'Дизайнер',
-      image: 'images/pp1.svg',
-      status: true,
-      email: 'marina.krungyan@mail.ru',
-    },
-    {
-      id: 5,
-      name: 'Aiza Zyazikova',
-      job: 'Рилсмейкер',
-      image: 'images/pp6.svg',
-      status: true,
-      email: 'zyazikova.a@mail.ru',
-    },
-    {
-      id: 6,
-      name: 'Сумаййа Башаева',
-      job: 'Контент-мейкер',
-      image: 'images/pp2.svg',
-      status: true,
-      email: 'miamin13@mail.ru',
-    },
-    {
-      id: 6,
-      name: 'Севиль Уильямсон',
-      job: 'Графический дизайнер',
-      image: 'images/pp4.svg',
-      status: true,
-      email: 'sevu13shka@mail.ru',
-    },
-  ]);
+  const [isOpenForm, setIsOpenForm] = useState(false);
+  const [team, setTeam] = useState(localStorage.getItem('team') ? JSON.parse(localStorage.getItem('team')) : [],
+  );
+  const [changeTeamId, setChangeTeamId] = useState(null);
+  const [newTeam, setNewTeam] = useState({
+    name: '',
+    job: '',
+    email: '',
+    id: '',
+  });
+  const addTeam = (e) => {
+    e.preventDefault();
+    if (typeof changeTeamId === 'string') {
+      console.log(1);
+      console.log(newTeam);
+      setTeam(team.map((item) => (item.id === changeTeamId ? newTeam : item)));
+    } else {
+      setTeam([...team, { ...newTeam, id: newTeam.name + team.length }]);
+    }
+    setNewTeam({
+      name: '',
+      job: '',
+      email: '',
+      id: '',
+    });
+    setIsOpenForm(false);
+    setChangeTeamId(null);
+  };
+  useEffect(() => {
+    localStorage.setItem('team', JSON.stringify(team));
+  }, [team]);
+  
+  const auth = useSelector((state) => state.auth.auth);
   return (
     <div>
       <Nav />
@@ -82,15 +50,15 @@ const Team = () => {
           <div className="team__teams">
             <div className="team__Col">
               <span>Сотрудники</span>
-              <button type="submit" className="teamBtn__second">
+              <button type="submit" className="teamBtn__second"  onClick={() => setIsOpenForm(true)}>
                 Добавить
               </button>
             </div>
             <div className="team-col">
-              {team.map(({ name, job, image, id, status, email }) => (
+              {team.map(({ name, job, id, email }) => (
                 <div className="team__userRow" key={id}>
-                  <Link href="#" className="team__userProfilePicture">
-                    <img src={image} alt="" />
+                  <Link to="/chats" href="#" className="team__userProfilePicture">
+                    {name[0]}
                   </Link>
                   <div className="team__userInfoCol">
                     <div className="team__userNameRow">
@@ -102,20 +70,80 @@ const Team = () => {
                     </div>
                   </div>
                   <div className="teamBtn">
-                    {status ? (
-                      <button type="submit" className="teamBtn__second">
-                        Написать сообщение
+                      <button type="submit" className="teamBtn__invite" onClick={() => setTeam(team.filter((item) => item.id !== id))}>
+                        Удалить сотрудника
                       </button>
-                    ) : (
-                      <button type="submit" className="teamBtn__invite">
-                        Приглашение отправлено
-                      </button>
-                    )}
                   </div>
                 </div>
               ))}
             </div>
           </div>
+          
+          {isOpenForm && (
+            <div className="addTeam__wrap">
+              <div className="blur" onClick={() => setIsOpenForm(false)}></div>
+              <section className="addTeam">
+                <h1 className="addTeam__title">Добавление сотрудника</h1>
+                <form action="">
+                  <div className="formInner">
+                    <div className="inputbox">
+                      <label htmlFor="names">Сотрудник</label>
+                      <input
+                        type="text"
+                        placeholder="ФИО сотрудника"
+                        name="names"
+                        id="names"
+                        value={newTeam.name}
+                        onChange={(e) =>
+                          setNewTeam((prev) => {
+                            return { ...prev, name: e.target.value };
+                          })
+                        }
+                        required
+                      />
+                    </div>
+
+                    <div className="inputbox">
+                      <label htmlFor="job">Должность</label>
+                      <input
+                        type="text"
+                        placeholder="Название должности"
+                        name="job"
+                        id="job"
+                        value={newTeam.job}
+                        onChange={(e) =>
+                          setNewTeam((prev) => {
+                            return { ...prev, job: e.target.value };
+                          })
+                        }
+                        required
+                      />
+                    </div>
+
+                    <div className="inputbox">
+                      <label htmlFor="emails">Почта</label>
+                      <input
+                        type="text"
+                        placeholder="Введите почту сотрудника"
+                        name="emails"
+                        id="emails"
+                        value={newTeam.email}
+                        onChange={(e) =>
+                          setNewTeam((prev) => {
+                            return { ...prev, email: e.target.value };
+                          })
+                        }
+                        required
+                      />
+                    </div>
+                    <button type="submit" className="primaryBtn" onClick={addTeam}>
+                      Добавить
+                    </button>
+                  </div>
+                </form>
+              </section>
+            </div>
+          )}
         </section>
       </div>
     </div>

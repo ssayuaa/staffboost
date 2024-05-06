@@ -2,15 +2,12 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import MyMainSvg from '../../assets/svg/sidebar/MyMainSvg';
 import TeamSvg from '../../assets/svg/sidebar/TeamSvg';
-import AssetsSvg from '../../assets/svg/sidebar/AssetsSvg';
-import BookingSvg from '../../assets/svg/sidebar/BookingSvg';
-import ServicesSvg from '../../assets/svg/sidebar/ServicesSvg';
-import HistorySvg from '../../assets/svg/sidebar/HistorySvg';
+import RatingSvg from '../../assets/svg/sidebar/RatingSvg';
 import MessagesSvg from '../../assets/svg/sidebar/MessagesSvg';
 import SettingsSvg from '../../assets/svg/sidebar/SettingsSvg';
-import HelpSvg from '../../assets/svg/HelpSvg';
 import SignOutSvg from '../../assets/svg/SignOutSvg';
 import DeskSvg from '../../assets/svg/sidebar/DeskSvg';
+
 
 import { setAuth } from '../../redux/authSlice/authSlice';
 
@@ -26,7 +23,8 @@ const Sidebar = ({ indexActiveEl }) => {
     <div>
       <div className="sidebar">
         <div>
-          <Link to="/" className={`sidebar__link ${indexActiveEl === 0 && 'sidebar__link_active'}`}>
+          <Link to="/"
+          className={`sidebar__link ${indexActiveEl === 0 && 'sidebar__link_active'}`}>
             <span className="sidebar__icon">
               <MyMainSvg active={indexActiveEl === 0 && true} />
             </span>
@@ -49,6 +47,15 @@ const Sidebar = ({ indexActiveEl }) => {
               <TeamSvg active={indexActiveEl === 2 && true} />
             </span>
             <span>Сотрудники</span>
+          </Link>
+
+          <Link
+            to="/rating"
+            className={`sidebar__link ${indexActiveEl === 7 && 'sidebar__link_active'}`}>
+            <span className="sidebar__icon">
+              <RatingSvg active={indexActiveEl === 7 && true} />
+            </span>
+            <span>Рейтинг</span>
           </Link>
 
           <Link
@@ -86,23 +93,20 @@ const Sidebar = ({ indexActiveEl }) => {
         <Link to="/">
           <MyMainSvg active={indexActiveEl === 0 && true} />
         </Link>
-        <Link to="/">
-          <AssetsSvg active={indexActiveEl === 1 && true} />
+        <Link to="/tasks">
+          <DeskSvg active={indexActiveEl === 1 && true} />
         </Link>
-        <Link to="/">
-          <BookingSvg active={indexActiveEl === 2 && true} />
+        <Link to="/team">
+          <TeamSvg active={indexActiveEl === 2 && true} />
         </Link>
-        <Link to="/">
-          <ServicesSvg active={indexActiveEl === 3 && true} />
-        </Link>
-        <Link to="/">
-          <HistorySvg active={indexActiveEl === 4 && true} />
+        <Link to="/rating">
+          <RatingSvg active={indexActiveEl === 7 && true} />
         </Link>
         <Link to="/chats">
-          <MessagesSvg active={indexActiveEl === 5 && true} />
+          <MessagesSvg active={indexActiveEl === 3 && true} />
         </Link>
         <Link to="/settings">
-          <SettingsSvg active={indexActiveEl === 6 && true} />
+          <SettingsSvg active={indexActiveEl === 4 && true} />
         </Link>
       </div>
     </div>

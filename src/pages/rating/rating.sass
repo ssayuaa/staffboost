@@ -1,0 +1,86 @@
+.ratings
+  display: flex
+  gap: 24px
+  margin: 32px 10px
+  padding: 0px 22px
+  width: 100%
+  overflow-y: auto 
+
+.rating
+  background: #101010
+  border-radius: 14px
+  padding: 16px 20px
+  width: 100%
+  @media (max-width: 1200px)
+    grid-column: 1 / 2
+    grid-row: 4 / 5
+  &__firstRow
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 14px
+  &__title
+    font-size: 24px
+    font-weight: 500
+  &__btn
+    background: var(--SS, #66F)
+    color: #FFF
+    border: none
+    font-family: Inter
+    font-size: 24px
+    padding: 6px 12px
+    border-radius: 6px
+    cursor: pointer
+    transition: 0.15s
+    &:hover
+      background: #5353E8
+  &__secondRow
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 24px 0
+    border-top: 1px solid #1E1E1E
+    @media (max-width: 767px)
+      justify-content: start
+      gap: 85px
+  &__heading
+    color: #848484
+    font-size: 18px
+    font-weight: 500
+    width: 20%
+    &:last-child
+      width: auto
+    @media (max-width: 1200px)
+      font-size: 15px
+    @media (max-width: 767px)
+      font-size: 15px
+    &__num
+      width: 5%
+      color: #848484
+      font-weight: 500
+      font-size: 18px
+  &__infoRow
+    display: flex
+    align-items: center
+    padding: 24px 0
+    justify-content: space-between
+    border-top: 1px solid #1E1E1E
+    @media (max-width: 767px)
+      justify-content: start
+      gap: 23px
+  &__info
+    color: #E0E4E7
+    font-size: 18px
+    font-weight: 400
+    width: 20%
+    &:last-child
+      width: auto
+    @media (max-width: 1200px)
+      font-size: 14px
+    @media (max-width: 767px)
+      font-size: 14px
+    &__num
+      width: 5%
+      color: #848484
+      font-weight: 500
+      font-size: 18px

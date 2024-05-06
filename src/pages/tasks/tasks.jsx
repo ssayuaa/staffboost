@@ -16,6 +16,9 @@ const Tasks = () => {
     employee: '',
     data: '',
     description: '',
+    souplelim: '',
+    durlim: '',
+    bonus: '',
   });
   const addTask = (e) => {
     e.preventDefault();
@@ -31,6 +34,9 @@ const Tasks = () => {
       employee: '',
       data: '',
       description: '',
+      souplelim: '',
+      durlim: '',
+      bonus: '',
     });
     setIsOpenForm(false);
     setChangeTaskId(null);
@@ -59,7 +65,7 @@ const Tasks = () => {
             </div>
           </div>
           <div className="tasksCatalog">
-            {tasks.map(({ name, id, employee, data }) => (
+            {tasks.map(({ name, id, employee, data, souplelim, durlim, bonus }) => (
               <div className="taskCard" key={id}>
                 <div>
                   <div className="taskCard__title">{name}</div>
@@ -96,6 +102,8 @@ const Tasks = () => {
               </div>
             ))}
           </div>
+
+
           {isOpenForm && (
             <div className="addTask__wrap">
               <div className="blur" onClick={() => setIsOpenForm(false)}></div>
@@ -121,23 +129,6 @@ const Tasks = () => {
                     </div>
 
                     <div className="inputbox">
-                      <label htmlFor="descriptions">Описание</label>
-                      <input
-                        type="text"
-                        placeholder="Описание задачи"
-                        name="descriptions"
-                        id="descriptions"
-                        value={newTask.description}
-                        onChange={(e) =>
-                          setNewTask((prev) => {
-                            return { ...prev, description: e.target.value };
-                          })
-                        }
-                        required
-                      />
-                    </div>
-
-                    <div className="inputbox">
                       <label htmlFor="emails">Сотрудник</label>
                       <input
                         type="text"
@@ -153,18 +144,49 @@ const Tasks = () => {
                         required
                       />
                     </div>
-
                     <div className="inputbox">
-                      <label htmlFor="dates">Дедлайн</label>
+                      <label htmlFor="dates">Мягкий Дедлайн</label>
                       <input
                         type="text"
                         placeholder="Дата"
                         name="dates"
                         id="dates"
-                        value={newTask.data}
+                        value={newTask.souplelim}
                         onChange={(e) =>
                           setNewTask((prev) => {
-                            return { ...prev, data: e.target.value };
+                            return { ...prev, souplelim: e.target.value };
+                          })
+                        }
+                        required
+                      />
+                    </div>
+                    <div className="inputbox">
+                      <label htmlFor="dates"> Жесткий Дедлайн</label>
+                      <input
+                        type="text"
+                        placeholder="Дата"
+                        name="dates"
+                        id="dates"
+                        value={newTask.durlim}
+                        onChange={(e) =>
+                          setNewTask((prev) => {
+                            return { ...prev, durlim: e.target.value };
+                          })
+                        }
+                        required
+                      />
+                    </div>
+                    <div className="inputbox">
+                      <label htmlFor="bonus">Бонусы</label>
+                      <input
+                        type="text"
+                        placeholder="Бонусы"
+                        name="bonuses"
+                        id="bonuses"
+                        value={newTask.bonus}
+                        onChange={(e) =>
+                          setNewTask((prev) => {
+                            return { ...prev, bonus: e.target.value };
                           })
                         }
                         required

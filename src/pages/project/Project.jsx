@@ -100,14 +100,13 @@ const Project = () => {
                     </label>
                   </div>
                 </div>
-                <Link to="/" className="availableSensors__link">
+                <Link to="/tasks" className="availableSensors__link">
                   Смотреть все
                 </Link>
               </div>
-            <div className="reminder">
+            {/* <div className="reminder">
               <div className="reminder__firstRow">
                 <p className="remider__title">Задачи</p>
-                <button className="reminder__btn">+ Добавить</button>
               </div>
               <div className="reminder__secondRow">
                 <span className="reminder__heading">Название задачи</span>
@@ -130,12 +129,8 @@ const Project = () => {
                 <span className="reminder__info reminder__info_hidden">Зукаева Д.</span>
                 <span className="reminder__info reminder__info_hidden">Выполнено</span>
               </div>
-              <div className="reminder__dots">
-                <img src="images/dot.svg" alt="Dot" />
-                <img src="images/dot.svg" alt="Dot" />
-                <img src="images/dot.svg" alt="Dot" />
-              </div>
-            </div>
+            
+            </div> */}
           </div>
         </section>
       </div>

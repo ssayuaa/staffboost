@@ -16,11 +16,7 @@ const Registration = () => {
   const sendData = (e) => {
     e.preventDefault();
     if (password === password2) {
-      localStorage.getItem('auth')
-        ? localStorage.setItem(
-            'auth',
-            JSON.stringify([
-              ...JSON.parse(localStorage.getItem('auth')),
+      localStorage.getItem('auth') ? localStorage.setItem('auth', JSON.stringify([...JSON.parse(localStorage.getItem('auth')),
               {
                 name,
                 email,
