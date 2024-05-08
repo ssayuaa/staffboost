@@ -159,12 +159,12 @@ const Tasks = () => {
                     </div>
 
                     <div className="inputbox">
-                      <label htmlFor="emails">Сотрудник</label>
+                      <label htmlFor="text">Сотрудник</label>
                       <input
                         type="text"
-                        placeholder="Введите почту сотрудника"
-                        name="emails"
-                        id="emails"
+                        placeholder="Введите ФИО сотрудника"
+                        name="text"
+                        id="text"
                         value={newTask.employee}
                         onChange={(e) =>
                           setNewTask((prev) => {

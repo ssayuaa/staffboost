@@ -12,7 +12,7 @@ const Nav = () => {
             <img src="images/logo1.png" alt="Logo" />
             <img src="images/logo2.png" alt="Logo" />
           </Link>
-          \
+          
         </nav>
         <div className="account">
           <div className="account__notification">
