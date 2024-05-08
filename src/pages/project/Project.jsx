@@ -104,33 +104,6 @@ const Project = () => {
                   Смотреть все
                 </Link>
               </div>
-            {/* <div className="reminder">
-              <div className="reminder__firstRow">
-                <p className="remider__title">Задачи</p>
-              </div>
-              <div className="reminder__secondRow">
-                <span className="reminder__heading">Название задачи</span>
-                <span className="reminder__heading">Дата создания</span>
-                <span className="reminder__heading reminder__heading_hidden">Дата выполнения</span>
-                <span className="reminder__heading reminder__heading_hidden">Сотрудник</span>
-                <span className="reminder__heading reminder__heading_hidden">Статус</span>
-              </div>
-              <div className="reminder__infoRow">
-                <span className="reminder__info">Создание отчета</span>
-                <span className="reminder__info">06/04/2024</span>
-                <span className="reminder__info reminder__info_hidden">08/04/2024</span>
-                <span className="reminder__info reminder__info_hidden">Башаева С.</span>
-                <span className="reminder__info reminder__info_hidden">Выполнено</span>
-              </div>
-              <div className="reminder__infoRow">
-                <span className="reminder__info">Сверстать часть макета</span>
-                <span className="reminder__info">06/04/2024</span>
-                <span className="reminder__info reminder__info_hidden">08/04/2024</span>
-                <span className="reminder__info reminder__info_hidden">Зукаева Д.</span>
-                <span className="reminder__info reminder__info_hidden">Выполнено</span>
-              </div>
-            
-            </div> */}
           </div>
         </section>
       </div>

@@ -51,7 +51,7 @@ const Nav = () => {
             </div>
             <div className="account__inner">
               <Link to="/" className="account__profilePicture">
-                {auth.image ? <img src="images/moon.svg" alt="Profile picture" /> : auth.name[0]}
+              {auth.img ? <img src={'./images/' + auth.img} alt="Profile picture" /> : auth.name[0]}
               </Link>
             </div>
             <select className="headerSelect" name="" id=""></select>

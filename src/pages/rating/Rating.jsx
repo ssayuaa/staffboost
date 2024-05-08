@@ -25,7 +25,6 @@ const Rating = () => {
           <div className="rating">
             <div className="rating__firstRow">
               <p className="rating__title">Рейтинг</p>
-              {/* <button className="rating__btn">+ Добавить</button> */}
             </div>
             <div className="rating__secondRow">
               <span className="rating__heading__num">№</span>

@@ -18,7 +18,7 @@ const Sidebar = ({ indexActiveEl }) => {
   const handleSignOut = () => {
     dispatch(setAuth(''));
     localStorage.removeItem('activeEmail');
-  };
+  }
   return (
     <div>
       <div className="sidebar">

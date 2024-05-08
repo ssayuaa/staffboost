@@ -11,6 +11,7 @@ import { setAuth } from '../../redux/authSlice/authSlice';
 const Settings = () => {
   const pathImage = 'images/moon.svg';
   const [img, setImg] = useState('');
+  const [name, setName]=useState('')
   const auth = useSelector((state) => state.auth.auth);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -18,6 +19,13 @@ const Settings = () => {
       dispatch(setAuth({ ...auth, img: img.substring(12) }));
     }
   }, [img]);
+
+  useEffect(() => {
+    if (name !== '') {
+      dispatch(setAuth({ ...auth, name: auth.name }));
+    }
+  }, [name]);
+
   console.log(auth);
   return (
     <div>
@@ -44,7 +52,7 @@ const Settings = () => {
                     <img src={'./images/' + auth.img} alt="" />
                   </div>
                   <div className="registration__userWrapper">
-                    <p className="registration__userName">Хадидже Мочиева</p>
+                    <p className="registration__userName">{auth.name}</p>
                     <div className="registration__verificationStatus">
                       <span>Не подтвержден</span>
                       <img src="images/close-circle.svg" alt="Close circle icon" />
@@ -69,7 +77,7 @@ const Settings = () => {
                     <label htmlFor="name">Полное имя (как в паспорте)</label>
                     <input
                       type="text"
-                      placeholder="Хадидже Мочиева"
+                      placeholder="Введите свое имя"
                       name="name"
                       id="name"
                       required
@@ -133,7 +141,7 @@ const Settings = () => {
                       Подтвердите аккаунт{' '}
                     </Link>
                   </div>
-                  <button type="submit" className="primaryBtn">
+                  <button type="submit" className="primaryBtn" onClick={''}> 
                     Сохранить изменения
                   </button>
                 </div>
