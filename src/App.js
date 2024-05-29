@@ -9,6 +9,7 @@ import Chats from './pages/chats/Chats';
 import Project from './pages/project/Project';
 import Team from './pages/team/team.jsx';
 import Rating from './pages/rating/Rating.jsx';
+import Aside from './components/aside/aside.jsx';
 
 const App = () => {
   const auth = useSelector((state) => state.auth.auth);
@@ -25,16 +26,19 @@ const App = () => {
     }
   }, [auth]);
   return (
-    <Routes>
-      <Route path="/" element={auth ? <Project /> : <Navigate to="/authorization" />} />
-      <Route path="/tasks" element={auth ? <Tasks /> : <Navigate to="/authorization" />} />
-      <Route path="/chats" element={auth ? <Chats /> : <Navigate to="/authorization" />} />
-      <Route path="/settings" element={auth ? <Settings /> : <Navigate to="/authorization" />} />
-      <Route path="/team" element={auth ? <Team /> : <Navigate to="/authorization" />} />
-      <Route path="/rating" element={auth ? <Rating /> : <Navigate to="/authorization" />} />
-      <Route path="/authorization" element={auth ? <Navigate to="/" /> : <Authorization />} />
-      <Route path="/registration" element={auth ? <Navigate to="/" /> : <Registration />} />
-    </Routes>
+    <div>
+      {/* <Aside /> */}
+      <Routes>
+        <Route path="/" element={auth ? <Project /> : <Navigate to="/authorization" />} />
+        <Route path="/tasks" element={auth ? <Tasks /> : <Navigate to="/authorization" />} />
+        <Route path="/chats" element={auth ? <Chats /> : <Navigate to="/authorization" />} />
+        <Route path="/settings" element={auth ? <Settings /> : <Navigate to="/authorization" />} />
+        <Route path="/team" element={auth ? <Team /> : <Navigate to="/authorization" />} />
+        <Route path="/rating" element={auth ? <Rating /> : <Navigate to="/authorization" />} />
+        <Route path="/authorization" element={auth ? <Navigate to="/" /> : <Authorization />} />
+        <Route path="/registration" element={auth ? <Navigate to="/" /> : <Registration />} />
+      </Routes>
+    </div>
   );
 };
 
