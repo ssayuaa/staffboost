@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Nav from '../../components/nav/nav';
 import Sidebar from '../../components/sidebar/sidebar';
 
 import './rating.sass';
@@ -18,7 +17,6 @@ const Rating = () => {
 
   return (
     <div>
-      <Nav />
       <div className="content">
         <Sidebar indexActiveEl={7} />
         <section className="ratings">
@@ -34,7 +32,7 @@ const Rating = () => {
               <span className="rating__heading">Сгоревшие баллы</span>
               <span className="rating__heading">Общее количество</span>
             </div>
-            {tasks.map(({ id, employee, bonus, }, i) => (
+            {tasks.map(({ id, employee, bonus }, i) => (
               <div className="rating__infoRow">
                 <span className="rating__info__num">{i + 1}</span>
                 <span className="rating__info">{employee}</span>

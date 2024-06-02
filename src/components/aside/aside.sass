@@ -6,13 +6,52 @@
     left: 0
     z-index:1000
     display: flex
+    transition: .3s
+    
 
 .aside__left
-    width: calc(100% - 380px)
+    width: 100%
     height: 100%
     background-color: rgba(0, 0, 0, .6)
+    
 
 .aside
     width: 380px
     height: 100%
+    position: absolute
+    top: 0
+    right: 0
     background-color: #101010
+    padding: 35px
+    transition: .4s
+    &__title
+        font-size: 23px        
+    &__top
+        position: relative
+    &__close
+        position: absolute
+        top: -12px
+        right: -12px
+        cursor: pointer
+
+
+.notifications
+    margin-top: 60px
+    display: flex
+    flex-direction: column
+    gap: 32px
+
+
+.aside_show
+    .aside__left
+        opacity: 1
+    .aside
+        transform: translateX(0)
+
+.aside_hidden
+    pointer-events: none
+    .aside__left
+        opacity: 0
+    .aside
+        transform: translateX(100%)
+    

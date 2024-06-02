@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Nav from './../../components/nav/nav';
+
 import Sidebar from './../../components/sidebar/sidebar';
 
 import './chats.sass';
@@ -7,7 +7,6 @@ import './chats.sass';
 const Chats = () => {
   return (
     <>
-      <Nav />
       <main className="content">
         <Sidebar indexActiveEl={3} />
         <section className="chat">

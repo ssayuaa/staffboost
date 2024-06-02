@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import Nav from '../../components/nav/nav';
 import Sidebar from '../../components/sidebar/sidebar';
 
 import './team.sass';
@@ -44,7 +43,6 @@ const Team = () => {
   const auth = useSelector((state) => state.auth.auth);
   return (
     <div>
-      <Nav />
       <div className="content">
         <Sidebar indexActiveEl={2} />
         <section className="team">

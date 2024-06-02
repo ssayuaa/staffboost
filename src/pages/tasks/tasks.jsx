@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 
-import Nav from '../../components/nav/nav';
 import Sidebar from '../../components/sidebar/sidebar';
 
 import './tasks.sass';
@@ -48,7 +47,6 @@ const Tasks = () => {
   }, [tasks]);
   return (
     <div>
-      <Nav />
       <main className="content">
         <Sidebar indexActiveEl={1} />
         <section className="myTasks">

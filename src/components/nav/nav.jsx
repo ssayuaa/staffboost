@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './nav.sass';
 
-const Nav = () => {
+const Nav = ({ setIsAsideOpen }) => {
   const auth = useSelector((state) => state.auth.auth);
   return (
     <>
@@ -12,10 +12,9 @@ const Nav = () => {
             <img src="images/logo1.png" alt="Logo" />
             <img src="images/logo2.png" alt="Logo" />
           </Link>
-          
         </nav>
         <div className="account">
-          <div className="account__notification">
+          <div className="account__notification" onClick={() => setIsAsideOpen(true)}>
             <img src="images/notification.svg" alt="Notification icon" />
             <img
               className="account__notificationDot"
@@ -51,7 +50,11 @@ const Nav = () => {
             </div>
             <div className="account__inner">
               <Link to="/" className="account__profilePicture">
-              {auth.img ? <img src={'./images/' + auth.img} alt="Profile picture" /> : auth.name[0]}
+                {auth.img ? (
+                  <img src={'./images/' + auth.img} alt="Profile picture" />
+                ) : (
+                  auth.name[0]
+                )}
               </Link>
             </div>
             <select className="headerSelect" name="" id=""></select>

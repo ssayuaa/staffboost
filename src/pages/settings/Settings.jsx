@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-import Nav from '../../components/nav/nav';
 import Sidebar from '../../components/sidebar/sidebar';
 
 import './settings.sass';
@@ -11,7 +10,7 @@ import { setAuth } from '../../redux/authSlice/authSlice';
 const Settings = () => {
   const pathImage = 'images/moon.svg';
   const [img, setImg] = useState('');
-  const [name, setName]=useState('')
+  const [name, setName] = useState('');
   const auth = useSelector((state) => state.auth.auth);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -29,7 +28,6 @@ const Settings = () => {
   console.log(auth);
   return (
     <div>
-      <Nav />
       <div className="flex margin">
         <Sidebar indexActiveEl={4} />
         <div className="leftContent">
@@ -141,7 +139,7 @@ const Settings = () => {
                       Подтвердите аккаунт{' '}
                     </Link>
                   </div>
-                  <button type="submit" className="primaryBtn" onClick={''}> 
+                  <button type="submit" className="primaryBtn" onClick={''}>
                     Сохранить изменения
                   </button>
                 </div>
