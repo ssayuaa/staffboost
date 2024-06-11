@@ -19,6 +19,7 @@ const Authorization = () => {
   const sendData = (e) => {
     e.preventDefault();
     if (
+      auth &&
       auth.some((item) => item.email === email) &&
       auth.some((item) => item.password === password)
     ) {
@@ -36,7 +37,9 @@ const Authorization = () => {
         <div className="registrationInner">
           <div className="registration__text">
             <h1 className="registration__title">Вход</h1>
-            <p className="registration__subtitle">Пожалуйста, авторизуйтесь, чтобы начать пользоваться платформой</p>
+            <p className="registration__subtitle">
+              Пожалуйста, авторизуйтесь, чтобы начать пользоваться платформой
+            </p>
             {error && <span style={{ color: 'red' }}>{error}</span>}
           </div>
           <form action="" onSubmit={sendData}>

@@ -30,7 +30,7 @@ const App = () => {
   return (
     <div>
       <Aside isAsideOpen={isAsideOpen} setIsAsideOpen={setIsAsideOpen} />
-      <Nav setIsAsideOpen={setIsAsideOpen} />
+      {auth ? <Nav setIsAsideOpen={setIsAsideOpen} /> : ''}
       <Routes>
         <Route path="/" element={auth ? <Project /> : <Navigate to="/authorization" />} />
         <Route path="/tasks" element={auth ? <Tasks /> : <Navigate to="/authorization" />} />
