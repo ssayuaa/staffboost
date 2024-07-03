@@ -27,6 +27,29 @@ const App = () => {
       );
     }
   }, [auth]);
+  useEffect(() => {
+    localStorage.setItem(
+      'team',
+      JSON.stringify([
+        {
+          name: 'Сумая Башаева',
+          points: '500',
+          job: 'дизайнер',
+          email: 'sumaya@gmail.com',
+          id: '000',
+          performance: 10,
+        },
+        {
+          name: 'Арбита Шаувхалова',
+          points: '400',
+          job: 'frontend-разработчик',
+          email: 'arbita@gmail.com',
+          id: '001',
+          performance: 9.5,
+        },
+      ]),
+    );
+  }, []);
   return (
     <div>
       <Aside isAsideOpen={isAsideOpen} setIsAsideOpen={setIsAsideOpen} />

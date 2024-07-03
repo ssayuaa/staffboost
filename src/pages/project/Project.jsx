@@ -10,50 +10,67 @@ const Project = () => {
       <div className="content">
         <Sidebar indexActiveEl={0} />
         <section className="main">
-          <div className="project">
-            <div className="project__firstCol">
-              <h2 className="project__name">
-                Статус проекта: <span className="project__span2">50%</span>
-              </h2>
-              <div className="project__info project__info_margin">
-                <div className="project__leftCol">
-                  <span className="project__title">Выполнено</span>
-                  <span className="project__numbers">12</span>
+          <div>
+            <div className="project">
+              <div className="project__firstCol">
+                <h2 className="project__name">
+                  Статус проекта: <span className="project__span2">50%</span>
+                </h2>
+                <div className="project__info project__info_margin">
+                  <div className="project__leftCol">
+                    <span className="project__title">Выполнено</span>
+                    <span className="project__numbers">12</span>
+                  </div>
+                  <div className="project__vl"></div>
+                  <div className="project__rightCol">
+                    <span className="project__title">Осталось</span>
+                    <span className="project__numbers">12</span>
+                  </div>
                 </div>
-                <div className="project__vl"></div>
-                <div className="project__rightCol">
-                  <span className="project__title">Осталось</span>
-                  <span className="project__numbers">12</span>
+
+                <div className="project__info">
+                  <div className="project__leftCol">
+                    <span className="project__title">Сгорают</span>
+                    <span className="project__numbers">1</span>
+                  </div>
+                  <div className="project__vl"></div>
+                  <div className="project__rightCol">
+                    <span className="project__title">Просрочено</span>
+                    <span className="project__numbers">3</span>
+                  </div>
                 </div>
               </div>
-              <div className="project__info">
-                <div className="project__leftCol">
-                  <span className="project__title">Сгорают</span>
-                  <span className="project__numbers">1</span>
-                </div>
-                <div className="project__vl"></div>
-                <div className="project__rightCol">
-                  <span className="project__title">Просрочено</span>
-                  <span className="project__numbers">3</span>
+              <ul className="project__characteristics">
+                <li>
+                  Название проекта:{' '}
+                  <span>
+                    Пилотный проект по внедрению алгоритмов ЭЦП в отделе для повышения безопасности
+                    информации
+                  </span>
+                </li>
+                <li>
+                  Дата создания: <span>04.04.2024</span>
+                </li>
+                <li>
+                  Дата сдачи: <span>04.06.2024</span>
+                </li>
+              </ul>
+            </div>
+            <div className="project project__margin ">
+              <div className="project__firstCol">
+                <ul className="project__characteristics project__characteristics_left">
+                  <li>
+                    Размер материального поощрения в процентах:
+                    <span> 60%</span>
+                  </li>
+                </ul>
+                <div to="/tasks" className="availableSensors__link">
+                  Изменить
                 </div>
               </div>
             </div>
-            <ul className="project__characteristics">
-              <li>
-                Название проекта:{' '}
-                <span>
-                  Пилотный проект по внедрению алгоритмов ЭЦП в отделе для повышения безопасности
-                  информации
-                </span>
-              </li>
-              <li>
-                Дата создания: <span>04.04.2024</span>
-              </li>
-              <li>
-                Дата сдачи: <span>04.06.2024</span>
-              </li>
-            </ul>
           </div>
+
           <div className="project-content-left">
             <div className="activity"></div>
             <div className="availableSensors">

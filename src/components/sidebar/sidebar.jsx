@@ -8,7 +8,6 @@ import SettingsSvg from '../../assets/svg/sidebar/SettingsSvg';
 import SignOutSvg from '../../assets/svg/SignOutSvg';
 import DeskSvg from '../../assets/svg/sidebar/DeskSvg';
 
-
 import { setAuth } from '../../redux/authSlice/authSlice';
 
 import './sidebar.sass';
@@ -18,13 +17,12 @@ const Sidebar = ({ indexActiveEl }) => {
   const handleSignOut = () => {
     dispatch(setAuth(''));
     localStorage.removeItem('activeEmail');
-  }
+  };
   return (
     <div>
       <div className="sidebar">
         <div>
-          <Link to="/"
-          className={`sidebar__link ${indexActiveEl === 0 && 'sidebar__link_active'}`}>
+          <Link to="/" className={`sidebar__link ${indexActiveEl === 0 && 'sidebar__link_active'}`}>
             <span className="sidebar__icon">
               <MyMainSvg active={indexActiveEl === 0 && true} />
             </span>
@@ -37,7 +35,7 @@ const Sidebar = ({ indexActiveEl }) => {
             <span className="sidebar__icon">
               <DeskSvg active={indexActiveEl === 1 && true} />
             </span>
-            <span>Доска</span>
+            <span>Задачи</span>
           </Link>
 
           <Link

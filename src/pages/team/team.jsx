@@ -8,6 +8,7 @@ import './team.sass';
 
 const Team = () => {
   const [isOpenForm, setIsOpenForm] = useState(false);
+  const [isOpenCard, setIsOpenCard] = useState(false);
   const [team, setTeam] = useState(
     localStorage.getItem('team') ? JSON.parse(localStorage.getItem('team')) : [],
   );
@@ -32,10 +33,13 @@ const Team = () => {
       job: '',
       email: '',
       id: '',
+      points: 0,
+      performance: 0,
     });
     setIsOpenForm(false);
     setChangeTeamId(null);
   };
+
   useEffect(() => {
     localStorage.setItem('team', JSON.stringify(team));
   }, [team]);
@@ -46,6 +50,45 @@ const Team = () => {
       <div className="content">
         <Sidebar indexActiveEl={2} />
         <section className="team">
+          {isOpenCard && (
+            <div className="addTeam__wrap">
+              <div className="blur" onClick={() => setIsOpenCard(false)}></div>
+              <section className="addTeam">
+                <h1 className="addTask__title">Карточка работника</h1>
+                <table className="table">
+                  <tr>
+                    <th>Имя:</th>
+                    <td>{team.filter(({ id }) => id === isOpenCard)[0].name}</td>
+                  </tr>
+                  <tr>
+                    <th>Должность:</th>
+                    <td>{team.filter(({ id }) => id === isOpenCard)[0].job}</td>
+                  </tr>
+                  <tr>
+                    <th>Почта:</th>
+                    <td>{team.filter(({ id }) => id === isOpenCard)[0].email}</td>
+                  </tr>
+                  <tr>
+                    <th>Общее количество баллов:</th>
+                    <td>{team.filter(({ id }) => id === isOpenCard)[0].points}</td>
+                  </tr>
+                  <tr>
+                    <th>Средний показатель успеваемости:</th>
+                    <td>{team.filter(({ id }) => id === isOpenCard)[0].performance}</td>
+                  </tr>
+                </table>
+                <div className="team__Col team__btn_center">
+                  <button
+                    type="submit"
+                    className="teamBtn__second"
+                    onClick={() => setIsOpenCard(false)}>
+                    Закрыть
+                  </button>
+                </div>
+              </section>
+            </div>
+          )}
+
           <div className="team__teams">
             <div className="team__Col">
               <span>Сотрудники</span>
@@ -59,7 +102,7 @@ const Team = () => {
                   <Link to="/chats" href="#" className="team__userProfilePicture">
                     {name[0]}
                   </Link>
-                  <div className="team__userInfoCol">
+                  <div className="team__userInfoCol" onClick={() => setIsOpenCard(id)}>
                     <div className="team__userNameRow">
                       <span className="team__name">{name}</span>
                     </div>
